@@ -2,6 +2,7 @@
   <div class="home-page">
     <Header />
     <HeroSection />
+    <AboutSection />
     <ServicesSection />
     <GallerySection />
   </div>
@@ -10,6 +11,7 @@
 <script setup>
 import Header from '@/components/Header.vue'
 import HeroSection from '@/components/HeroSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
 import ServicesSection from '@/components/ServicesSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 </script>

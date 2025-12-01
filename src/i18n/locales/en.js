@@ -86,5 +86,38 @@ export default {
       washing: 'Washing',
       interior: 'Interior'
     }
+  },
+  about: {
+    title: 'About Us',
+    subtitle: 'Why Thousands of Customers Trust Us',
+    heading: 'Premium Car Care for Over 5 Years',
+    text1: 'We specialize in professional car care and offer our customers the highest quality and individual attention. Our team consists of experienced specialists who treat your vehicle with state-of-the-art technologies and premium products.',
+    text2: 'Every car is a unique project for us. We use only the finest materials and guarantee perfect results that will exceed your expectations.',
+    yearsExperience: 'Years of Experience',
+    cta: 'Book Appointment Now',
+    benefits: {
+      quality: {
+        title: 'Highest Quality',
+        description: 'We use only premium products and cutting-edge technologies for perfect results'
+      },
+      professionals: {
+        title: 'Professionals',
+        description: 'Our team consists of certified specialists with years of experience'
+      },
+      materials: {
+        title: 'Premium Materials',
+        description: 'We work exclusively with leading manufacturers of car care products'
+      },
+      guarantee: {
+        title: 'Guarantee',
+        description: 'We guarantee the quality of our work and customer satisfaction'
+      }
+    },
+    features: [
+      'Individual approach to each vehicle',
+      'Use of premium products',
+      'Professional equipment and technologies',
+      'Satisfaction guarantee'
+    ]
   }
 }

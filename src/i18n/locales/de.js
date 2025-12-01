@@ -86,5 +86,38 @@ export default {
       washing: 'Wäsche',
       interior: 'Innenraum'
     }
+  },
+  about: {
+    title: 'Über uns',
+    subtitle: 'Warum uns Tausende von Kunden vertrauen',
+    heading: 'Premium Autopflege seit über 5 Jahren',
+    text1: 'Wir sind spezialisiert auf professionelle Autopflege und bieten unseren Kunden höchste Qualität und individuelle Betreuung. Unser Team besteht aus erfahrenen Spezialisten, die Ihr Fahrzeug mit modernsten Technologien und Premium-Produkten behandeln.',
+    text2: 'Jedes Auto ist für uns ein einzigartiges Projekt. Wir verwenden nur erstklassige Materialien und garantieren perfekte Ergebnisse, die Ihre Erwartungen übertreffen werden.',
+    yearsExperience: 'Jahre Erfahrung',
+    cta: 'Jetzt Termin buchen',
+    benefits: {
+      quality: {
+        title: 'Höchste Qualität',
+        description: 'Wir verwenden nur Premium-Produkte und modernste Technologien für perfekte Ergebnisse'
+      },
+      professionals: {
+        title: 'Profis',
+        description: 'Unser Team besteht aus zertifizierten Spezialisten mit langjähriger Erfahrung'
+      },
+      materials: {
+        title: 'Premium-Materialien',
+        description: 'Wir arbeiten ausschließlich mit führenden Herstellern von Autopflegeprodukten'
+      },
+      guarantee: {
+        title: 'Garantie',
+        description: 'Wir garantieren die Qualität unserer Arbeit und die Zufriedenheit unserer Kunden'
+      }
+    },
+    features: [
+      'Individuelle Herangehensweise an jedes Fahrzeug',
+      'Verwendung von Premium-Produkten',
+      'Professionelle Ausrüstung und Technologien',
+      'Zufriedenheitsgarantie'
+    ]
   }
 }
