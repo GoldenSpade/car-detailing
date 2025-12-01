@@ -74,5 +74,17 @@ export default {
     },
     bookService: 'Service buchen',
     viewDetails: 'Details ansehen'
+  },
+  gallery: {
+    title: 'Unsere Arbeiten',
+    subtitle: 'Perfekte Ergebnisse sprechen für sich',
+    viewAll: 'Alle ansehen',
+    categories: {
+      all: 'Alle',
+      ceramic: 'Keramik',
+      polishing: 'Polierung',
+      washing: 'Wäsche',
+      interior: 'Innenraum'
+    }
   }
 }

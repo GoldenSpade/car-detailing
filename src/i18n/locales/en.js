@@ -74,5 +74,17 @@ export default {
     },
     bookService: 'Book Service',
     viewDetails: 'View Details'
+  },
+  gallery: {
+    title: 'Our Work',
+    subtitle: 'Perfect Results Speak for Themselves',
+    viewAll: 'View All',
+    categories: {
+      all: 'All',
+      ceramic: 'Ceramic',
+      polishing: 'Polishing',
+      washing: 'Washing',
+      interior: 'Interior'
+    }
   }
 }
