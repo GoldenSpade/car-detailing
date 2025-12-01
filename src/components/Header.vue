@@ -41,7 +41,7 @@
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark" :class="{ scrolled: isScrolled }">
       <div class="container">
-        <a class="navbar-brand" href="#home">
+        <a class="navbar-brand" href="/">
           <i class="bi bi-gem me-2"></i>
           <span class="brand-text">Premium Detailing</span>
         </a>
@@ -132,6 +132,12 @@ const toggleMenu = () => {
 }
 
 const scrollToSection = (sectionId) => {
+  // Если мы не на главной странице, переходим на главную с хешем
+  if (window.location.pathname !== '/') {
+    window.location.href = `/#${sectionId}`
+    return
+  }
+
   const element = document.getElementById(sectionId)
   if (element) {
     const offset = 80

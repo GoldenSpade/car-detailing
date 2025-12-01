@@ -168,5 +168,105 @@ export default {
     copyright: 'Premium Detailing. All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms & Conditions'
+  },
+  privacy: {
+    title: 'Privacy Policy',
+    lastUpdated: 'Last updated',
+    intro: {
+      title: '1. Introduction',
+      text: 'The protection of your personal data is very important to us. This privacy policy informs you about what personal data we collect, how we use it, and what rights you have.'
+    },
+    dataCollection: {
+      title: '2. Collection of Personal Data',
+      text: 'We collect the following personal data:',
+      items: [
+        'Name and contact information (phone number)',
+        'Information about your vehicle',
+        'Booking and service data',
+        'Communication data from your contact'
+      ]
+    },
+    dataUse: {
+      title: '3. Use of Your Data',
+      text: 'We use your personal data for the following purposes:',
+      items: [
+        'Processing your bookings and service requests',
+        'Communicating with you about our services',
+        'Improving our services',
+        'Fulfilling legal obligations'
+      ]
+    },
+    dataProtection: {
+      title: '4. Data Security',
+      text: 'We implement technical and organizational security measures to protect your data against accidental or intentional manipulation, loss, destruction, or access by unauthorized persons.'
+    },
+    cookies: {
+      title: '5. Cookies',
+      text: 'Our website uses cookies to improve user experience. You can disable the use of cookies in your browser settings.'
+    },
+    rights: {
+      title: '6. Your Rights',
+      text: 'You have the following rights regarding your personal data:',
+      items: [
+        'Right to access stored data',
+        'Right to correct incorrect data',
+        'Right to delete your data',
+        'Right to restriction of processing',
+        'Right to data portability',
+        'Right to object to processing'
+      ]
+    },
+    contact: {
+      title: '7. Contact',
+      text: 'If you have any questions about privacy, please contact us:',
+      phone: 'Phone'
+    }
+  },
+  terms: {
+    title: 'Terms & Conditions',
+    lastUpdated: 'Last updated',
+    intro: {
+      title: '1. Scope',
+      text: 'These Terms and Conditions (T&C) apply to all services provided by Premium Detailing. By booking our services, you accept these T&C.'
+    },
+    services: {
+      title: '2. Scope of Services',
+      text: 'We offer the following services:',
+      items: [
+        'Ceramic coating',
+        'Vehicle polishing',
+        'Complete vehicle wash',
+        'Interior cleaning and detailing'
+      ]
+    },
+    booking: {
+      title: '3. Booking and Appointments',
+      text: 'Appointments can be made by phone, email, or through our website. A booking is only binding after our confirmation.'
+    },
+    payment: {
+      title: '4. Prices and Payment',
+      text: 'All prices include statutory VAT. Payment is due after completion of work, in cash or by debit card.'
+    },
+    cancellation: {
+      title: '5. Cancellation',
+      text: 'Cancellations are free of charge up to 24 hours before the scheduled appointment. For shorter-notice cancellations, we reserve the right to charge a cancellation fee of 50% of the order value.'
+    },
+    liability: {
+      title: '6. Liability',
+      text: 'We are only liable for damages in cases of intent and gross negligence. Liability for slight negligence is excluded, unless essential contractual obligations are affected.'
+    },
+    warranty: {
+      title: '7. Warranty',
+      text: 'We guarantee professional execution of all work. In case of defects, please contact us immediately. We will remedy the defects free of charge.'
+    },
+    changes: {
+      title: '8. Changes to T&C',
+      text: 'We reserve the right to change these T&C at any time. The amended terms will be published on our website.'
+    },
+    contact: {
+      title: '9. Contact',
+      text: 'If you have any questions about our T&C, please contact us:',
+      phone: 'Phone'
+    }
   }
 }

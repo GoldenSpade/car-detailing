@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
+import PrivacyPage from '@/pages/PrivacyPage.vue'
+import TermsPage from '@/pages/TermsPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,10 +11,33 @@ const router = createRouter({
       name: 'home',
       component: HomePage,
       meta: {
-        title: 'Car detailing',
+        title: 'Premium Detailing',
+      },
+    },
+    {
+      path: '/privacy',
+      name: 'privacy',
+      component: PrivacyPage,
+      meta: {
+        title: 'Privacy Policy - Premium Detailing',
+      },
+    },
+    {
+      path: '/terms',
+      name: 'terms',
+      component: TermsPage,
+      meta: {
+        title: 'Terms & Conditions - Premium Detailing',
       },
     },
   ],
+  scrollBehavior(_to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
 
 // Navigation guard to update document title and check authentication

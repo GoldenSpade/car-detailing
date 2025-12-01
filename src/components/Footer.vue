@@ -132,9 +132,9 @@
           </div>
           <div class="col-md-6 text-center text-md-end">
             <div class="footer-bottom-links">
-              <a href="#" class="footer-bottom-link">{{ $t('footer.privacy') }}</a>
+              <router-link to="/privacy" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">{{ $t('footer.privacy') }}</router-link>
               <span class="separator">|</span>
-              <a href="#" class="footer-bottom-link">{{ $t('footer.terms') }}</a>
+              <router-link to="/terms" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">{{ $t('footer.terms') }}</router-link>
             </div>
           </div>
         </div>
@@ -149,6 +149,12 @@ import { computed } from 'vue'
 const currentYear = computed(() => new Date().getFullYear())
 
 const scrollToSection = (sectionId) => {
+  // Если мы не на главной странице, переходим на главную с хешем
+  if (window.location.pathname !== '/') {
+    window.location.href = `/#${sectionId}`
+    return
+  }
+
   const element = document.getElementById(sectionId)
   if (element) {
     const offset = 80

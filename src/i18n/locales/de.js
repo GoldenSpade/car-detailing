@@ -168,5 +168,105 @@ export default {
     copyright: 'Premium Detailing. Alle Rechte vorbehalten.',
     privacy: 'Datenschutz',
     terms: 'AGB'
+  },
+  privacy: {
+    title: 'Datenschutzerklärung',
+    lastUpdated: 'Zuletzt aktualisiert',
+    intro: {
+      title: '1. Einleitung',
+      text: 'Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten wir erheben, wie wir diese verwenden und welche Rechte Sie haben.'
+    },
+    dataCollection: {
+      title: '2. Erhebung personenbezogener Daten',
+      text: 'Wir erheben folgende personenbezogene Daten:',
+      items: [
+        'Name und Kontaktinformationen (Telefonnummer)',
+        'Informationen über Ihr Fahrzeug',
+        'Buchungs- und Servicedaten',
+        'Kommunikationsdaten aus Ihrer Kontaktaufnahme'
+      ]
+    },
+    dataUse: {
+      title: '3. Verwendung Ihrer Daten',
+      text: 'Wir verwenden Ihre personenbezogenen Daten für folgende Zwecke:',
+      items: [
+        'Bearbeitung Ihrer Buchungen und Serviceanfragen',
+        'Kommunikation mit Ihnen über unsere Dienstleistungen',
+        'Verbesserung unserer Dienstleistungen',
+        'Erfüllung gesetzlicher Verpflichtungen'
+      ]
+    },
+    dataProtection: {
+      title: '4. Datensicherheit',
+      text: 'Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder gegen den Zugriff unberechtigter Personen zu schützen.'
+    },
+    cookies: {
+      title: '5. Cookies',
+      text: 'Unsere Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern. Sie können die Verwendung von Cookies in Ihren Browsereinstellungen deaktivieren.'
+    },
+    rights: {
+      title: '6. Ihre Rechte',
+      text: 'Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:',
+      items: [
+        'Recht auf Auskunft über die gespeicherten Daten',
+        'Recht auf Berichtigung unrichtiger Daten',
+        'Recht auf Löschung Ihrer Daten',
+        'Recht auf Einschränkung der Verarbeitung',
+        'Recht auf Datenübertragbarkeit',
+        'Widerspruchsrecht gegen die Verarbeitung'
+      ]
+    },
+    contact: {
+      title: '7. Kontakt',
+      text: 'Bei Fragen zum Datenschutz können Sie uns jederzeit kontaktieren:',
+      phone: 'Telefon'
+    }
+  },
+  terms: {
+    title: 'Allgemeine Geschäftsbedingungen',
+    lastUpdated: 'Zuletzt aktualisiert',
+    intro: {
+      title: '1. Geltungsbereich',
+      text: 'Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Dienstleistungen, die von Premium Detailing erbracht werden. Mit der Buchung unserer Dienstleistungen akzeptieren Sie diese AGB.'
+    },
+    services: {
+      title: '2. Leistungsumfang',
+      text: 'Wir bieten folgende Dienstleistungen an:',
+      items: [
+        'Keramikversiegelung',
+        'Fahrzeugpolitur',
+        'Komplette Fahrzeugwäsche',
+        'Innenraumreinigung und Aufbereitung'
+      ]
+    },
+    booking: {
+      title: '3. Buchung und Terminvereinbarung',
+      text: 'Termine können telefonisch, per E-Mail oder über unsere Website vereinbart werden. Eine Buchung ist erst nach unserer Bestätigung verbindlich.'
+    },
+    payment: {
+      title: '4. Preise und Zahlung',
+      text: 'Alle angegebenen Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer. Die Zahlung erfolgt nach Abschluss der Arbeiten bar oder per EC-Karte.'
+    },
+    cancellation: {
+      title: '5. Stornierung',
+      text: 'Stornierungen sind bis 24 Stunden vor dem vereinbarten Termin kostenfrei möglich. Bei kurzfristigeren Absagen behalten wir uns vor, eine Ausfallgebühr von 50% des Auftragswertes zu berechnen.'
+    },
+    liability: {
+      title: '6. Haftung',
+      text: 'Wir haften für Schäden nur bei Vorsatz und grober Fahrlässigkeit. Die Haftung für leichte Fahrlässigkeit ist ausgeschlossen, soweit nicht wesentliche Vertragspflichten betroffen sind.'
+    },
+    warranty: {
+      title: '7. Gewährleistung',
+      text: 'Wir gewährleisten die fachgerechte Ausführung aller Arbeiten. Bei Mängeln kontaktieren Sie uns bitte umgehend. Wir werden die Mängel kostenlos beseitigen.'
+    },
+    changes: {
+      title: '8. Änderungen der AGB',
+      text: 'Wir behalten uns vor, diese AGB jederzeit zu ändern. Die geänderten Bedingungen werden auf unserer Website veröffentlicht.'
+    },
+    contact: {
+      title: '9. Kontakt',
+      text: 'Bei Fragen zu unseren AGB kontaktieren Sie uns bitte:',
+      phone: 'Telefon'
+    }
   }
 }
