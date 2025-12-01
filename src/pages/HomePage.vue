@@ -6,6 +6,7 @@
     <ServicesSection />
     <GallerySection />
     <ContactSection />
+    <Footer />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import AboutSection from '@/components/AboutSection.vue'
 import ServicesSection from '@/components/ServicesSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 import ContactSection from '@/components/ContactSection.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <style scoped>

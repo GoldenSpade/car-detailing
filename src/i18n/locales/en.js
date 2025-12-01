@@ -159,5 +159,14 @@ export default {
       successMessage: 'Thank you! Your message has been sent successfully. We will contact you shortly.',
       errorMessage: 'Sorry, an error occurred while sending the message. Please try again.'
     }
+  },
+  footer: {
+    description: 'Professional car care at the highest level. We make your car shine with premium products and cutting-edge technologies.',
+    quickLinks: 'Quick Links',
+    ourServices: 'Our Services',
+    contactUs: 'Contact Us',
+    copyright: 'Premium Detailing. All rights reserved.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms & Conditions'
   }
 }

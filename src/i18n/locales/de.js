@@ -159,5 +159,14 @@ export default {
       successMessage: 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen.',
       errorMessage: 'Entschuldigung, beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'
     }
+  },
+  footer: {
+    description: 'Professionelle Autopflege auf höchstem Niveau. Wir machen Ihr Auto zum Glänzen mit Premium-Produkten und modernsten Technologien.',
+    quickLinks: 'Schnellzugriff',
+    ourServices: 'Unsere Dienstleistungen',
+    contactUs: 'Kontaktieren Sie uns',
+    copyright: 'Premium Detailing. Alle Rechte vorbehalten.',
+    privacy: 'Datenschutz',
+    terms: 'AGB'
   }
 }
