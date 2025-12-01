@@ -119,5 +119,45 @@ export default {
       'Professional equipment and technologies',
       'Satisfaction guarantee'
     ]
+  },
+  contact: {
+    title: 'Contact',
+    subtitle: 'Book an Appointment or Contact Us',
+    infoTitle: 'Contact Information',
+    infoText: 'Call or write to us, we will be happy to advise you and answer all your questions.',
+    address: {
+      title: 'Address',
+      line1: 'Sample Street 123',
+      line2: '12345 Berlin, Germany'
+    },
+    phone: {
+      title: 'Phone'
+    },
+    email: {
+      title: 'Email'
+    },
+    hours: {
+      title: 'Working Hours',
+      weekdays: 'Mon - Fri: 9:00 AM - 6:00 PM',
+      weekend: 'Sat: 10:00 AM - 4:00 PM'
+    },
+    formTitle: 'Book an Appointment',
+    formText: 'Fill out the form and we will contact you shortly.',
+    form: {
+      name: 'Your Name',
+      namePlaceholder: 'John Smith',
+      phone: 'Phone',
+      phonePlaceholder: '+49 123 456 789',
+      email: 'Email',
+      emailPlaceholder: 'your.email@example.com',
+      service: 'Select Service',
+      selectService: 'Choose a service',
+      message: 'Your Message',
+      messagePlaceholder: 'Write your message or ask a question...',
+      submit: 'Send Message',
+      sending: 'Sending...',
+      successMessage: 'Thank you! Your message has been sent successfully. We will contact you shortly.',
+      errorMessage: 'Sorry, an error occurred while sending the message. Please try again.'
+    }
   }
 }

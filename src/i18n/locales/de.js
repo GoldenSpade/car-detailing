@@ -119,5 +119,45 @@ export default {
       'Professionelle Ausrüstung und Technologien',
       'Zufriedenheitsgarantie'
     ]
+  },
+  contact: {
+    title: 'Kontakt',
+    subtitle: 'Vereinbaren Sie einen Termin oder kontaktieren Sie uns',
+    infoTitle: 'Kontaktinformationen',
+    infoText: 'Rufen Sie uns an oder schreiben Sie uns, wir beraten Sie gerne und beantworten alle Ihre Fragen.',
+    address: {
+      title: 'Adresse',
+      line1: 'Musterstraße 123',
+      line2: '12345 Berlin, Deutschland'
+    },
+    phone: {
+      title: 'Telefon'
+    },
+    email: {
+      title: 'E-Mail'
+    },
+    hours: {
+      title: 'Öffnungszeiten',
+      weekdays: 'Mo - Fr: 9:00 - 18:00',
+      weekend: 'Sa: 10:00 - 16:00'
+    },
+    formTitle: 'Termin vereinbaren',
+    formText: 'Füllen Sie das Formular aus und wir werden uns in Kürze mit Ihnen in Verbindung setzen.',
+    form: {
+      name: 'Ihr Name',
+      namePlaceholder: 'Max Mustermann',
+      phone: 'Telefon',
+      phonePlaceholder: '+49 123 456 789',
+      email: 'E-Mail',
+      emailPlaceholder: 'ihre.email@beispiel.de',
+      service: 'Service wählen',
+      selectService: 'Wählen Sie einen Service',
+      message: 'Ihre Nachricht',
+      messagePlaceholder: 'Schreiben Sie uns Ihre Nachricht oder stellen Sie eine Frage...',
+      submit: 'Nachricht senden',
+      sending: 'Wird gesendet...',
+      successMessage: 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen.',
+      errorMessage: 'Entschuldigung, beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'
+    }
   }
 }
