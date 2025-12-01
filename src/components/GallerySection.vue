@@ -77,6 +77,10 @@
 <script setup>
 import { ref, computed } from 'vue'
 
+const getImagePath = (path) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
+
 const categories = ['all', 'ceramic', 'polishing', 'washing', 'interior']
 const activeCategory = ref('all')
 const lightboxOpen = ref(false)
@@ -84,36 +88,36 @@ const currentImageIndex = ref(0)
 
 const images = [
   // Showcase photos - only for 'all' category
-  { src: '/images/hero/hero-1.jpg', alt: 'Premium Car', category: 'all' },
-  { src: '/images/hero/hero-2.jpg', alt: 'Luxury Vehicle', category: 'all' },
-  { src: '/images/hero/hero-3.jpg', alt: 'Detailed Car', category: 'all' },
-  { src: '/images/hero/hero-4.jpg', alt: 'Perfect Finish', category: 'all' },
-  { src: '/images/hero/hero-5.jpg', alt: 'Premium Result', category: 'all' },
-  { src: '/images/hero/hero-6.jpg', alt: 'Luxury Detail', category: 'all' },
-  { src: '/images/hero/hero-7.jpg', alt: 'Showcase Car', category: 'all' },
-  { src: '/images/hero/hero-8.jpg', alt: 'Premium Work', category: 'all' },
-  { src: '/images/hero/hero-9.jpg', alt: 'Perfect Car', category: 'all' },
-  { src: '/images/hero/hero-10.jpg', alt: 'Top Quality', category: 'all' },
+  { src: getImagePath('/images/hero/hero-1.jpg'), alt: 'Premium Car', category: 'all' },
+  { src: getImagePath('/images/hero/hero-2.jpg'), alt: 'Luxury Vehicle', category: 'all' },
+  { src: getImagePath('/images/hero/hero-3.jpg'), alt: 'Detailed Car', category: 'all' },
+  { src: getImagePath('/images/hero/hero-4.jpg'), alt: 'Perfect Finish', category: 'all' },
+  { src: getImagePath('/images/hero/hero-5.jpg'), alt: 'Premium Result', category: 'all' },
+  { src: getImagePath('/images/hero/hero-6.jpg'), alt: 'Luxury Detail', category: 'all' },
+  { src: getImagePath('/images/hero/hero-7.jpg'), alt: 'Showcase Car', category: 'all' },
+  { src: getImagePath('/images/hero/hero-8.jpg'), alt: 'Premium Work', category: 'all' },
+  { src: getImagePath('/images/hero/hero-9.jpg'), alt: 'Perfect Car', category: 'all' },
+  { src: getImagePath('/images/hero/hero-10.jpg'), alt: 'Top Quality', category: 'all' },
 
   // Ceramic
-  { src: '/images/gallery/ceramic/ceramic-1.jpg', alt: 'Premium Ceramic Coating', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-1.jpg'), alt: 'Premium Ceramic Coating', category: 'ceramic' },
 
   // Polishing
-  { src: '/images/gallery/polishing/polishing-1.jpg', alt: 'Professional Polishing', category: 'polishing' },
-  { src: '/images/gallery/polishing/polishing-2.jpg', alt: 'High Gloss Polishing', category: 'polishing' },
-  { src: '/images/gallery/polishing/polishing-3.jpg', alt: 'Paint Correction', category: 'polishing' },
-  { src: '/images/gallery/polishing/polishing-4.jpg', alt: 'Polishing Result', category: 'polishing' },
-  { src: '/images/gallery/polishing/polishing-5.jpg', alt: 'Mirror Finish', category: 'polishing' },
+  { src: getImagePath('/images/gallery/polishing/polishing-1.jpg'), alt: 'Professional Polishing', category: 'polishing' },
+  { src: getImagePath('/images/gallery/polishing/polishing-2.jpg'), alt: 'High Gloss Polishing', category: 'polishing' },
+  { src: getImagePath('/images/gallery/polishing/polishing-3.jpg'), alt: 'Paint Correction', category: 'polishing' },
+  { src: getImagePath('/images/gallery/polishing/polishing-4.jpg'), alt: 'Polishing Result', category: 'polishing' },
+  { src: getImagePath('/images/gallery/polishing/polishing-5.jpg'), alt: 'Mirror Finish', category: 'polishing' },
 
   // Washing
-  { src: '/images/gallery/washing/washing-1.jpg', alt: 'Complete Wash', category: 'washing' },
-  { src: '/images/gallery/washing/washing-2.jpg', alt: 'Complex Wash', category: 'washing' },
-  { src: '/images/gallery/washing/washing-3.jpg', alt: 'Washing Process', category: 'washing' },
-  { src: '/images/gallery/washing/washing-4.jpg', alt: 'Car Washing', category: 'washing' },
+  { src: getImagePath('/images/gallery/washing/washing-1.jpg'), alt: 'Complete Wash', category: 'washing' },
+  { src: getImagePath('/images/gallery/washing/washing-2.jpg'), alt: 'Complex Wash', category: 'washing' },
+  { src: getImagePath('/images/gallery/washing/washing-3.jpg'), alt: 'Washing Process', category: 'washing' },
+  { src: getImagePath('/images/gallery/washing/washing-4.jpg'), alt: 'Car Washing', category: 'washing' },
 
   // Interior
-  { src: '/images/gallery/interior/interior-1.jpg', alt: 'Interior Cleaning', category: 'interior' },
-  { src: '/images/gallery/interior/interior-2.jpg', alt: 'Interior Detailing', category: 'interior' }
+  { src: getImagePath('/images/gallery/interior/interior-1.jpg'), alt: 'Interior Cleaning', category: 'interior' },
+  { src: getImagePath('/images/gallery/interior/interior-2.jpg'), alt: 'Interior Detailing', category: 'interior' }
 ]
 
 const filteredImages = computed(() => {
@@ -403,7 +407,7 @@ const previousImage = () => {
 
 @media (max-width: 768px) {
   .gallery-section {
-    padding: 60px 0;
+    padding: 140px 0 60px;
   }
 
   .section-title {

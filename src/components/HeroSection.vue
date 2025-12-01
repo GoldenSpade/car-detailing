@@ -69,11 +69,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const getImagePath = (path) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
+
 const images = [
-  '/images/hero/hero-1.jpg',
-  '/images/hero/hero-2.jpg',
-  '/images/hero/hero-3.jpg',
-  '/images/hero/hero-4.jpg'
+  getImagePath('/images/hero/hero-1.jpg'),
+  getImagePath('/images/hero/hero-2.jpg'),
+  getImagePath('/images/hero/hero-3.jpg'),
+  getImagePath('/images/hero/hero-4.jpg')
 ]
 
 const currentImageIndex = ref(0)
@@ -375,6 +379,10 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }

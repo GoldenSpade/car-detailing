@@ -491,7 +491,7 @@ textarea.form-control {
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 60px 0;
+    padding: 140px 0 60px;
   }
 
   .section-title {

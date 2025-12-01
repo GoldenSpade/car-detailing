@@ -30,7 +30,7 @@
       <div class="row align-items-center mt-5">
         <div class="col-lg-6" data-aos="fade-right">
           <div class="about-image">
-            <img src="/images/hero/hero-5.jpg" alt="About Us" />
+            <img :src="getImagePath('/images/hero/hero-5.jpg')" alt="About Us" />
             <div class="experience-badge">
               <div class="badge-number">5+</div>
               <div class="badge-text">{{ $t('about.yearsExperience') }}</div>
@@ -100,6 +100,10 @@ const aboutFeatures = computed(() => [
   t('about.features.2'),
   t('about.features.3')
 ])
+
+const getImagePath = (path) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
 </script>
 
 <style scoped>
@@ -331,7 +335,7 @@ const aboutFeatures = computed(() => [
 
 @media (max-width: 768px) {
   .about-section {
-    padding: 60px 0;
+    padding: 140px 0 60px;
   }
 
   .section-title {

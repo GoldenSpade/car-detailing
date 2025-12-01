@@ -146,6 +146,10 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
+const getImagePath = (path) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
+
 const services = computed(() => ({
   ceramic: {
     title: t('services.ceramic.title'),
@@ -159,7 +163,7 @@ const services = computed(() => ({
     ],
     price: t('services.ceramic.price'),
     popular: true,
-    image: '/images/services/ceramic-coating.jpg',
+    image: getImagePath('/images/services/ceramic-coating.jpg'),
     icon: 'bi-shield-fill-check'
   },
   complex: {
@@ -174,7 +178,7 @@ const services = computed(() => ({
     ],
     price: t('services.complex.price'),
     popular: false,
-    image: '/images/services/complex-wash.jpg',
+    image: getImagePath('/images/services/complex-wash.jpg'),
     icon: 'bi-droplet-fill'
   },
   polishing: {
@@ -189,7 +193,7 @@ const services = computed(() => ({
     ],
     price: t('services.polishing.price'),
     popular: false,
-    image: '/images/services/polishing.jpg',
+    image: getImagePath('/images/services/polishing.jpg'),
     icon: 'bi-stars'
   },
   cleaning: {
@@ -204,7 +208,7 @@ const services = computed(() => ({
     ],
     price: t('services.cleaning.price'),
     popular: false,
-    image: '/images/services/interior-cleaning.jpg',
+    image: getImagePath('/images/services/interior-cleaning.jpg'),
     icon: 'bi-brightness-high-fill'
   }
 }))
@@ -448,7 +452,7 @@ const services = computed(() => ({
 
 @media (max-width: 768px) {
   .services-section {
-    padding: 60px 0;
+    padding: 140px 0 60px;
   }
 
   .section-title {

@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins,
-    // base: '/car-detailing/',
+    base: '/car-detailing/',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
