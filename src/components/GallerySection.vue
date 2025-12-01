@@ -83,18 +83,18 @@ const lightboxOpen = ref(false)
 const currentImageIndex = ref(0)
 
 const images = [
-  { src: '/images/IMG_4393.JPEG', alt: 'Premium Car 1', category: 'ceramic' },
-  { src: '/images/IMG_4394.JPEG', alt: 'Premium Car 2', category: 'polishing' },
-  { src: '/images/IMG_4396.JPEG', alt: 'Premium Car 3', category: 'ceramic' },
-  { src: '/images/IMG_4401.JPEG', alt: 'Premium Car 4', category: 'washing' },
-  { src: '/images/IMG_4403.JPEG', alt: 'Premium Car 5', category: 'polishing' },
-  { src: '/images/IMG_4406.JPEG', alt: 'Premium Car 6', category: 'ceramic' },
-  { src: '/images/IMG_4407.JPEG', alt: 'Premium Car 7', category: 'interior' },
-  { src: '/images/IMG_4408.JPEG', alt: 'Premium Car 8', category: 'washing' },
-  { src: '/images/IMG_4409.JPEG', alt: 'Premium Car 9', category: 'polishing' },
-  { src: '/images/IMG_4411.JPEG', alt: 'Premium Car 10', category: 'ceramic' },
-  { src: '/images/services/IMG_4390.JPEG', alt: 'Washing Process', category: 'washing' },
-  { src: '/images/services/IMG_4391.JPEG', alt: 'Ceramic Coating', category: 'ceramic' }
+  { src: '/images/hero/hero-1.jpg', alt: 'Premium Ceramic Coating', category: 'ceramic' },
+  { src: '/images/gallery/ceramic/gallery-ceramic-1.jpg', alt: 'Ceramic Protection', category: 'polishing' },
+  { src: '/images/hero/hero-2.jpg', alt: 'Ceramic Finish', category: 'ceramic' },
+  { src: '/images/hero/hero-3.jpg', alt: 'Complete Wash', category: 'washing' },
+  { src: '/images/hero/hero-4.jpg', alt: 'Professional Polishing', category: 'polishing' },
+  { src: '/images/gallery/ceramic/gallery-ceramic-2.jpg', alt: 'Ceramic Coating Result', category: 'ceramic' },
+  { src: '/images/gallery/interior/gallery-interior-1.jpg', alt: 'Interior Cleaning', category: 'interior' },
+  { src: '/images/gallery/washing/gallery-wash-1.jpg', alt: 'Complex Wash', category: 'washing' },
+  { src: '/images/gallery/polishing/gallery-polishing-1.jpg', alt: 'High Gloss Polishing', category: 'polishing' },
+  { src: '/images/gallery/ceramic/gallery-ceramic-3.jpg', alt: 'Ceramic Protection Detail', category: 'ceramic' },
+  { src: '/images/services/complex-wash.jpg', alt: 'Washing Process', category: 'washing' },
+  { src: '/images/services/ceramic-coating.jpg', alt: 'Ceramic Application', category: 'ceramic' }
 ]
 
 const filteredImages = computed(() => {

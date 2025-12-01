@@ -70,10 +70,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const images = [
-  '/images/IMG_4393.JPEG',
-  '/images/IMG_4396.JPEG',
-  '/images/IMG_4401.JPEG',
-  '/images/IMG_4403.JPEG'
+  '/images/hero/hero-1.jpg',
+  '/images/hero/hero-2.jpg',
+  '/images/hero/hero-3.jpg',
+  '/images/hero/hero-4.jpg'
 ]
 
 const currentImageIndex = ref(0)

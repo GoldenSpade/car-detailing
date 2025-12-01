@@ -159,7 +159,7 @@ const services = computed(() => ({
     ],
     price: t('services.ceramic.price'),
     popular: true,
-    image: '/images/services/IMG_4391.JPEG',
+    image: '/images/services/ceramic-coating.jpg',
     icon: 'bi-shield-fill-check'
   },
   complex: {
@@ -174,7 +174,7 @@ const services = computed(() => ({
     ],
     price: t('services.complex.price'),
     popular: false,
-    image: '/images/services/IMG_4390.JPEG',
+    image: '/images/services/complex-wash.jpg',
     icon: 'bi-droplet-fill'
   },
   polishing: {
@@ -189,7 +189,7 @@ const services = computed(() => ({
     ],
     price: t('services.polishing.price'),
     popular: false,
-    image: '/images/services/IMG_4392.JPEG',
+    image: '/images/services/polishing.jpg',
     icon: 'bi-stars'
   },
   cleaning: {
@@ -204,7 +204,7 @@ const services = computed(() => ({
     ],
     price: t('services.cleaning.price'),
     popular: false,
-    image: '/images/services/IMG_4397.JPEG',
+    image: '/images/services/interior-cleaning.jpg',
     icon: 'bi-brightness-high-fill'
   }
 }))
