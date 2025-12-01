@@ -1,9 +1,9 @@
 export default {
   header: {
     home: 'Home',
+    about: 'About',
     services: 'Services',
     gallery: 'Gallery',
-    prices: 'Prices',
     contact: 'Contact',
     bookNow: 'Book Now'
   },

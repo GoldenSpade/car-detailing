@@ -52,6 +52,11 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#about" @click="scrollToSection('about')">
+                {{ $t('header.about') }}
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#services" @click="scrollToSection('services')">
                 {{ $t('header.services') }}
               </a>
@@ -59,11 +64,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#gallery" @click="scrollToSection('gallery')">
                 {{ $t('header.gallery') }}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#prices" @click="scrollToSection('prices')">
-                {{ $t('header.prices') }}
               </a>
             </li>
             <li class="nav-item">
