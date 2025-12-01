@@ -282,6 +282,7 @@ const previousImage = () => {
   max-width: 90vw;
   max-height: 90vh;
   position: relative;
+  z-index: 10000;
 }
 
 .lightbox-content img {
@@ -289,6 +290,7 @@ const previousImage = () => {
   max-height: 90vh;
   object-fit: contain;
   border-radius: 10px;
+  display: block;
 }
 
 .lightbox-counter {
@@ -339,6 +341,7 @@ const previousImage = () => {
   left: 2rem;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10001;
 }
 
 .lightbox-prev:hover {
@@ -349,6 +352,7 @@ const previousImage = () => {
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10001;
 }
 
 .lightbox-next:hover {
@@ -413,17 +417,27 @@ const previousImage = () => {
 
   .lightbox-prev,
   .lightbox-next {
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    z-index: 10002;
   }
 
   .lightbox-prev {
-    left: 1rem;
+    left: 0.5rem;
   }
 
   .lightbox-next {
-    right: 1rem;
+    right: 0.5rem;
+  }
+
+  .lightbox-content {
+    max-width: 85vw;
+    max-height: 85vh;
+  }
+
+  .lightbox-content img {
+    max-height: 85vh;
   }
 }
 
