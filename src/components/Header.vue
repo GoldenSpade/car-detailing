@@ -94,7 +94,9 @@ const isMenuOpen = ref(false)
 
 const languages = [
   { code: 'de', label: 'DE' },
-  { code: 'en', label: 'EN' }
+  { code: 'en', label: 'EN' },
+  { code: 'ru', label: 'RU' },
+  { code: 'uk', label: 'UA' }
 ]
 
 const currentLocale = computed(() => locale.value)
