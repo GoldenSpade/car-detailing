@@ -41,10 +41,10 @@
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark" :class="{ scrolled: isScrolled }">
       <div class="container">
-        <a class="navbar-brand" href="/">
+        <router-link to="/" class="navbar-brand">
           <i class="bi bi-gem me-2"></i>
           <span class="brand-text">Premium Detailing</span>
-        </a>
+        </router-link>
 
         <button
           class="navbar-toggler"
@@ -132,9 +132,12 @@ const toggleMenu = () => {
 }
 
 const scrollToSection = (sectionId) => {
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+  const currentPath = window.location.pathname.replace(/\/$/, '')
+
   // Если мы не на главной странице, переходим на главную с хешем
-  if (window.location.pathname !== '/') {
-    window.location.href = `/#${sectionId}`
+  if (currentPath !== basePath) {
+    window.location.href = `${basePath}/#${sectionId}`
     return
   }
 

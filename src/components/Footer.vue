@@ -149,9 +149,12 @@ import { computed } from 'vue'
 const currentYear = computed(() => new Date().getFullYear())
 
 const scrollToSection = (sectionId) => {
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+  const currentPath = window.location.pathname.replace(/\/$/, '')
+
   // Если мы не на главной странице, переходим на главную с хешем
-  if (window.location.pathname !== '/') {
-    window.location.href = `/#${sectionId}`
+  if (currentPath !== basePath) {
+    window.location.href = `${basePath}/#${sectionId}`
     return
   }
 
