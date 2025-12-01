@@ -212,7 +212,7 @@ const services = computed(() => ({
 
 <style scoped>
 .services-section {
-  padding: 100px 0;
+  padding: 180px 0 100px;
   background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
   position: relative;
 }

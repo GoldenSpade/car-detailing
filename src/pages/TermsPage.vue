@@ -86,7 +86,7 @@ const currentDate = computed(() => {
 }
 
 .legal-content {
-  padding: 150px 0 80px;
+  padding: 180px 0 80px;
   min-height: calc(100vh - 200px);
 }
 

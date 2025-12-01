@@ -119,7 +119,7 @@ onUnmounted(() => {
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-top: 0;
+  padding-top: 120px;
 }
 
 .hero-background {

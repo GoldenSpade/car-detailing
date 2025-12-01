@@ -149,7 +149,7 @@ const previousImage = () => {
 
 <style scoped>
 .gallery-section {
-  padding: 100px 0;
+  padding: 180px 0 100px;
   background: #0a0a0a;
   position: relative;
 }
