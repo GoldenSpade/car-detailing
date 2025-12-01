@@ -14,14 +14,25 @@
           </div>
           <div class="language-switcher">
             <button
-              v-for="lang in languages"
-              :key="lang.code"
-              @click="changeLanguage(lang.code)"
-              class="lang-btn"
-              :class="{ active: currentLocale === lang.code }"
+              @click="toggleLanguageDropdown"
+              class="lang-dropdown-btn"
+              :class="{ active: isLanguageDropdownOpen }"
             >
-              {{ lang.label }}
+              <i class="bi bi-globe"></i>
+              <span>{{ currentLanguage.label }}</span>
+              <i class="bi bi-chevron-down"></i>
             </button>
+            <div v-if="isLanguageDropdownOpen" class="lang-dropdown">
+              <button
+                v-for="lang in languages"
+                :key="lang.code"
+                @click="changeLanguage(lang.code)"
+                class="lang-dropdown-item"
+                :class="{ active: currentLocale === lang.code }"
+              >
+                {{ lang.label }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -91,6 +102,7 @@ const { locale } = useI18n()
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
+const isLanguageDropdownOpen = ref(false)
 
 const languages = [
   { code: 'de', label: 'DE' },
@@ -101,9 +113,18 @@ const languages = [
 
 const currentLocale = computed(() => locale.value)
 
+const currentLanguage = computed(() => {
+  return languages.find((lang) => lang.code === currentLocale.value) || languages[0]
+})
+
+const toggleLanguageDropdown = () => {
+  isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value
+}
+
 const changeLanguage = (lang) => {
   locale.value = lang
   localStorage.setItem('locale', lang)
+  isLanguageDropdownOpen.value = false
 }
 
 const toggleMenu = () => {
@@ -129,8 +150,14 @@ const handleScroll = () => {
 
 const handleClickOutside = (event) => {
   const navbar = event.target.closest('.navbar')
+  const langSwitcher = event.target.closest('.language-switcher')
+
   if (!navbar && isMenuOpen.value) {
     isMenuOpen.value = false
+  }
+
+  if (!langSwitcher && isLanguageDropdownOpen.value) {
+    isLanguageDropdownOpen.value = false
   }
 }
 
@@ -173,11 +200,10 @@ onUnmounted(() => {
 
 /* Language Switcher */
 .language-switcher {
-  display: flex;
-  gap: 0.5rem;
+  position: relative;
 }
 
-.lang-btn {
+.lang-dropdown-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
@@ -187,17 +213,69 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.lang-btn:hover {
+.lang-dropdown-btn:hover {
   background: rgba(255, 215, 0, 0.2);
   border-color: #ffd700;
 }
 
-.lang-btn.active {
-  background: #ffd700;
+.lang-dropdown-btn.active {
+  background: rgba(255, 215, 0, 0.2);
   border-color: #ffd700;
-  color: #1a1a1a;
+}
+
+.lang-dropdown-btn i:first-child {
+  font-size: 1rem;
+}
+
+.lang-dropdown-btn i:last-child {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.lang-dropdown-btn.active i:last-child {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.lang-dropdown-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-align: left;
+  display: block;
+}
+
+.lang-dropdown-item:hover {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.lang-dropdown-item.active {
+  background: rgba(255, 215, 0, 0.3);
+  color: #ffd700;
 }
 
 /* Main Navigation */
