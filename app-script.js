@@ -111,7 +111,7 @@ function doGet(e) {
       // Get data from URL parameters
       const data = {
         name: e.parameter.name || '',
-        phone: e.parameter.phone || '',
+        phone: e.parameter.phone ? "'" + e.parameter.phone : '',
         service: e.parameter.service || '',
         message: e.parameter.message || ''
       };

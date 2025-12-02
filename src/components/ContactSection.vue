@@ -95,10 +95,10 @@
                     <label for="service">{{ $t('contact.form.service') }}</label>
                     <select id="service" v-model="formData.service" class="form-control" required>
                       <option value="">{{ $t('contact.form.selectService') }}</option>
-                      <option value="ceramic">{{ $t('services.ceramic.title') }}</option>
-                      <option value="complex">{{ $t('services.complex.title') }}</option>
-                      <option value="polishing">{{ $t('services.polishing.title') }}</option>
-                      <option value="cleaning">{{ $t('services.cleaning.title') }}</option>
+                      <option :value="$t('services.ceramic.title')">{{ $t('services.ceramic.title') }}</option>
+                      <option :value="$t('services.complex.title')">{{ $t('services.complex.title') }}</option>
+                      <option :value="$t('services.polishing.title')">{{ $t('services.polishing.title') }}</option>
+                      <option :value="$t('services.cleaning.title')">{{ $t('services.cleaning.title') }}</option>
                     </select>
                   </div>
                 </div>
