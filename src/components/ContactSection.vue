@@ -168,12 +168,44 @@ const handleSubmit = async () => {
   submitMessage.value = ''
 
   try {
-    // Симуляция отправки формы
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL
 
-    // Здесь должна быть реальная отправка на сервер
-    console.log('Form submitted:', formData.value)
+    if (!scriptUrl) {
+      console.error('Google Script URL is not configured in .env')
+      throw new Error('Configuration error')
+    }
 
+    console.log('Submitting form data:', formData.value)
+    console.log('Script URL:', scriptUrl)
+
+    // Создаем Promise с таймаутом
+    const fetchWithTimeout = (url, options, timeout = 10000) => {
+      return Promise.race([
+        fetch(url, options),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Request timeout')), timeout)
+        )
+      ])
+    }
+
+    // Отправка данных в Google таблицу
+    await fetchWithTimeout(
+      scriptUrl,
+      {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData.value),
+      },
+      10000
+    )
+
+    console.log('Form submission completed successfully')
+
+    // Режим no-cors не возвращает данные ответа,
+    // но если запрос завершился без ошибок, считаем отправку успешной
     submitSuccess.value = true
     submitMessage.value = t('contact.form.successMessage')
 
@@ -190,8 +222,24 @@ const handleSubmit = async () => {
       submitMessage.value = ''
     }, 5000)
   } catch (error) {
+    console.error('Form submission error:', error)
     submitSuccess.value = false
-    submitMessage.value = t('contact.form.errorMessage')
+
+    // Определяем тип ошибки для более информативного сообщения
+    if (error.message === 'Request timeout') {
+      submitMessage.value = t('contact.form.errorMessage') + ' (Timeout)'
+    } else if (error.message === 'Configuration error') {
+      submitMessage.value = t('contact.form.errorMessage') + ' (Configuration)'
+    } else if (error.message === 'Failed to fetch') {
+      submitMessage.value = t('contact.form.errorMessage') + ' (Network)'
+    } else {
+      submitMessage.value = t('contact.form.errorMessage')
+    }
+
+    // Скрыть сообщение об ошибке через 7 секунд
+    setTimeout(() => {
+      submitMessage.value = ''
+    }, 7000)
   } finally {
     isSubmitting.value = false
   }
