@@ -17,22 +17,12 @@
             <div class="contact-items">
               <div class="contact-item">
                 <div class="contact-icon">
-                  <i class="bi bi-geo-alt-fill"></i>
-                </div>
-                <div class="contact-details">
-                  <h4>{{ $t('contact.address.title') }}</h4>
-                  <p>{{ $t('contact.address.line1') }}<br />{{ $t('contact.address.line2') }}</p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
                   <i class="bi bi-telephone-fill"></i>
                 </div>
                 <div class="contact-details">
                   <h4>{{ $t('contact.phone.title') }}</h4>
                   <p>
-                    <a href="tel:+49123456789">+49 123 456 789</a>
+                    <a href="tel:+491795251871">+49 179 5251871</a>
                   </p>
                 </div>
               </div>
@@ -44,20 +34,7 @@
                 <div class="contact-details">
                   <h4>{{ $t('contact.email.title') }}</h4>
                   <p>
-                    <a href="mailto:info@detailing.de">info@detailing.de</a>
-                  </p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="bi bi-clock-fill"></i>
-                </div>
-                <div class="contact-details">
-                  <h4>{{ $t('contact.hours.title') }}</h4>
-                  <p>
-                    {{ $t('contact.hours.weekdays') }}<br />
-                    {{ $t('contact.hours.weekend') }}
+                    <a href="mailto:info@d4-detailing.com">info@d4-detailing.com</a>
                   </p>
                 </div>
               </div>

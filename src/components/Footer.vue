@@ -99,23 +99,12 @@
             <h3 class="footer-heading">{{ $t('footer.contactUs') }}</h3>
             <ul class="footer-contact">
               <li>
-                <i class="bi bi-geo-alt-fill"></i>
-                <span>
-                  {{ $t('contact.address.line1') }}<br />
-                  {{ $t('contact.address.line2') }}
-                </span>
-              </li>
-              <li>
                 <i class="bi bi-telephone-fill"></i>
-                <a href="tel:+49123456789">+49 123 456 789</a>
+                <a href="tel:+491795251871">+49 179 5251871</a>
               </li>
               <li>
                 <i class="bi bi-envelope-fill"></i>
-                <a href="mailto:info@detailing.de">info@detailing.de</a>
-              </li>
-              <li>
-                <i class="bi bi-clock-fill"></i>
-                <span>{{ $t('contact.hours.weekdays') }}</span>
+                <a href="mailto:info@d4-detailing.com">info@d4-detailing.com</a>
               </li>
             </ul>
           </div>
