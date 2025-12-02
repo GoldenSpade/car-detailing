@@ -38,19 +38,18 @@
                   </p>
                 </div>
               </div>
-            </div>
 
-            <!-- Social Links -->
-            <div class="social-links">
-              <a href="#" class="social-link" aria-label="Facebook">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="Instagram">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="WhatsApp">
-                <i class="bi bi-whatsapp"></i>
-              </a>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="bi bi-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>WhatsApp</h4>
+                  <p>
+                    <a href="https://wa.me/491795251871" target="_blank" rel="noopener noreferrer">+49 179 5251871</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -132,7 +131,11 @@
                 </div>
               </div>
 
-              <div v-if="submitMessage" class="alert" :class="submitSuccess ? 'alert-success' : 'alert-error'">
+              <div
+                v-if="submitMessage"
+                class="alert"
+                :class="submitSuccess ? 'alert-success' : 'alert-error'"
+              >
                 {{ submitMessage }}
               </div>
             </form>
@@ -153,7 +156,7 @@ const formData = ref({
   name: '',
   phone: '',
   service: '',
-  message: ''
+  message: '',
 })
 
 const isSubmitting = ref(false)
@@ -179,7 +182,7 @@ const handleSubmit = async () => {
       name: '',
       phone: '',
       service: '',
-      message: ''
+      message: '',
     }
 
     // Скрыть сообщение через 5 секунд
@@ -309,35 +312,6 @@ const handleSubmit = async () => {
 
 .contact-details a:hover {
   color: #ffd700;
-}
-
-/* Social Links */
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.social-link {
-  width: 45px;
-  height: 45px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  border-color: #ffd700;
-  color: #1a1a1a;
-  transform: translateY(-3px);
 }
 
 /* Contact Form */

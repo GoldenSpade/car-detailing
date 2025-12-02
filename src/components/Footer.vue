@@ -13,17 +13,6 @@
             <p class="footer-description">
               {{ $t('footer.description') }}
             </p>
-            <div class="social-links">
-              <a href="#" class="social-link" aria-label="Facebook">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="Instagram">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="WhatsApp">
-                <i class="bi bi-whatsapp"></i>
-              </a>
-            </div>
           </div>
         </div>
 
@@ -99,12 +88,16 @@
             <h3 class="footer-heading">{{ $t('footer.contactUs') }}</h3>
             <ul class="footer-contact">
               <li>
-                <i class="bi bi-telephone-fill"></i>
+                <i class="bi bi-telephone-fill" style="margin-top: 0"></i>
                 <a href="tel:+491795251871">+49 179 5251871</a>
               </li>
               <li>
-                <i class="bi bi-envelope-fill"></i>
+                <i class="bi bi-envelope-fill" style="margin-top: 0"></i>
                 <a href="mailto:info@d4-detailing.com">info@d4-detailing.com</a>
+              </li>
+              <li>
+                <i class="bi bi-whatsapp" style="margin-top: 0"></i>
+                <a href="https://wa.me/491795251871" target="_blank" rel="noopener noreferrer">WhatsApp (+49 179 5251871)</a>
               </li>
             </ul>
           </div>
@@ -115,15 +108,25 @@
       <div class="footer-bottom">
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start">
-            <p class="copyright">
-              &copy; {{ currentYear }} {{ $t('footer.copyright') }}
-            </p>
+            <p class="copyright">&copy; {{ currentYear }} {{ $t('footer.copyright') }}</p>
           </div>
           <div class="col-md-6 text-center text-md-end">
             <div class="footer-bottom-links">
-              <router-link to="/privacy" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">{{ $t('footer.privacy') }}</router-link>
+              <router-link
+                to="/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-bottom-link"
+                >{{ $t('footer.privacy') }}</router-link
+              >
               <span class="separator">|</span>
-              <router-link to="/terms" target="_blank" rel="noopener noreferrer" class="footer-bottom-link">{{ $t('footer.terms') }}</router-link>
+              <router-link
+                to="/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-bottom-link"
+                >{{ $t('footer.terms') }}</router-link
+              >
             </div>
           </div>
         </div>
@@ -153,7 +156,7 @@ const scrollToSection = (sectionId) => {
     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
     window.scrollTo({
       top: elementPosition - offset,
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 }
@@ -202,34 +205,6 @@ const scrollToSection = (sectionId) => {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-bottom: 1.5rem;
-}
-
-/* Social Links */
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-link {
-  width: 45px;
-  height: 45px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  border-color: #ffd700;
-  color: #1a1a1a;
-  transform: translateY(-3px);
 }
 
 /* Footer Section */
@@ -371,10 +346,6 @@ const scrollToSection = (sectionId) => {
 
   .footer-description {
     text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
   }
 
   .footer-heading {
