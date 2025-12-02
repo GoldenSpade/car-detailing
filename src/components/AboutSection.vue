@@ -68,8 +68,10 @@
 <script setup>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useImagePath } from '@/composables/useImagePath'
 
 const { t } = useI18n()
+const { getImagePath } = useImagePath()
 
 const benefits = computed(() => [
   {
@@ -100,10 +102,6 @@ const aboutFeatures = computed(() => [
   t('about.features.2'),
   t('about.features.3')
 ])
-
-const getImagePath = (path) => {
-  return import.meta.env.BASE_URL + path.replace(/^\//, '')
-}
 </script>
 
 <style scoped>

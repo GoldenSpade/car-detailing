@@ -143,12 +143,10 @@
 <script setup>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useImagePath } from '@/composables/useImagePath'
 
 const { t } = useI18n()
-
-const getImagePath = (path) => {
-  return import.meta.env.BASE_URL + path.replace(/^\//, '')
-}
+const { getImagePath } = useImagePath()
 
 const services = computed(() => ({
   ceramic: {

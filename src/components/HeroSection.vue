@@ -68,10 +68,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useImagePath } from '@/composables/useImagePath'
 
-const getImagePath = (path) => {
-  return import.meta.env.BASE_URL + path.replace(/^\//, '')
-}
+const { getImagePath } = useImagePath()
 
 const images = [
   getImagePath('/images/hero/hero-1.jpg'),

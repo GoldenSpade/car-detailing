@@ -76,10 +76,9 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useImagePath } from '@/composables/useImagePath'
 
-const getImagePath = (path) => {
-  return import.meta.env.BASE_URL + path.replace(/^\//, '')
-}
+const { getImagePath } = useImagePath()
 
 const categories = ['all', 'ceramic', 'polishing', 'washing', 'interior']
 const activeCategory = ref('all')
