@@ -178,65 +178,93 @@ const handleSubmit = async () => {
     console.log('Submitting form data:', formData.value)
     console.log('Script URL:', scriptUrl)
 
-    // Создаем Promise с таймаутом
-    const fetchWithTimeout = (url, options, timeout = 10000) => {
-      return Promise.race([
-        fetch(url, options),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Request timeout')), timeout)
-        )
-      ])
-    }
+    // Use JSONP approach to bypass CORS and get real response
+    const callbackName = `jsonp_callback_${Date.now()}_${Math.random().toString(36).substring(7)}`
 
-    // Отправка данных в Google таблицу
-    await fetchWithTimeout(
-      scriptUrl,
-      {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData.value),
-      },
-      10000
-    )
+    await new Promise((resolve, reject) => {
+      // Create global callback function
+      window[callbackName] = function(data) {
+        // Clean up script element
+        if (script && script.parentNode) {
+          document.head.removeChild(script)
+        }
+        delete window[callbackName]
 
-    console.log('Form submission completed successfully')
+        console.log('Received response from Google Apps Script:', data)
 
-    // Режим no-cors не возвращает данные ответа,
-    // но если запрос завершился без ошибок, считаем отправку успешной
-    submitSuccess.value = true
-    submitMessage.value = t('contact.form.successMessage')
+        if (data.success) {
+          submitSuccess.value = true
+          submitMessage.value = t('contact.form.successMessage')
 
-    // Очистка формы
-    formData.value = {
-      name: '',
-      phone: '',
-      service: '',
-      message: '',
-    }
+          // Clear form
+          formData.value = {
+            name: '',
+            phone: '',
+            service: '',
+            message: '',
+          }
 
-    // Скрыть сообщение через 5 секунд
-    setTimeout(() => {
-      submitMessage.value = ''
-    }, 5000)
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            submitMessage.value = ''
+          }, 5000)
+
+          resolve(data)
+        } else {
+          reject(new Error(data.message || 'Server error'))
+        }
+      }
+
+      // Create script element
+      const params = new URLSearchParams({
+        name: formData.value.name,
+        phone: formData.value.phone,
+        service: formData.value.service,
+        message: formData.value.message,
+        callback: callbackName
+      })
+
+      const script = document.createElement('script')
+      script.src = `${scriptUrl}?${params.toString()}`
+
+      script.onerror = () => {
+        if (script && script.parentNode) {
+          document.head.removeChild(script)
+        }
+        delete window[callbackName]
+        reject(new Error('Network error'))
+      }
+
+      // Request timeout
+      setTimeout(() => {
+        if (window[callbackName]) {
+          if (script && script.parentNode) {
+            document.head.removeChild(script)
+          }
+          delete window[callbackName]
+          reject(new Error('Request timeout'))
+        }
+      }, 10000)
+
+      document.head.appendChild(script)
+    })
+
   } catch (error) {
     console.error('Form submission error:', error)
     submitSuccess.value = false
 
-    // Определяем тип ошибки для более информативного сообщения
+    // Determine error type for informative message
     if (error.message === 'Request timeout') {
       submitMessage.value = t('contact.form.errorMessage') + ' (Timeout)'
     } else if (error.message === 'Configuration error') {
       submitMessage.value = t('contact.form.errorMessage') + ' (Configuration)'
-    } else if (error.message === 'Failed to fetch') {
+    } else if (error.message === 'Network error') {
       submitMessage.value = t('contact.form.errorMessage') + ' (Network)'
     } else {
       submitMessage.value = t('contact.form.errorMessage')
     }
 
-    // Скрыть сообщение об ошибке через 7 секунд
+    // Hide error message after 7 seconds
     setTimeout(() => {
       submitMessage.value = ''
     }, 7000)
