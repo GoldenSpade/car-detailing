@@ -153,7 +153,7 @@ const previousImage = () => {
 
 <style scoped>
 .gallery-section {
-  padding: 180px 0 100px;
+  padding: 100px 0 80px;
   background: #0a0a0a;
   position: relative;
 }
@@ -407,7 +407,7 @@ const previousImage = () => {
 
 @media (max-width: 768px) {
   .gallery-section {
-    padding: 140px 0 60px;
+    padding: 80px 0 60px;
   }
 
   .section-title {
