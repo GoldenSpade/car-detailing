@@ -75,7 +75,6 @@ const { getImagePath } = useImagePath()
 const { scrollToSection } = useScrollToSection()
 
 const images = [
-  getImagePath('/images/hero/hero-1.jpg'),
   getImagePath('/images/hero/hero-2.jpg'),
   getImagePath('/images/hero/hero-3.jpg'),
   getImagePath('/images/hero/hero-4.jpg')

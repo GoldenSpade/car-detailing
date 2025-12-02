@@ -87,7 +87,6 @@ const currentImageIndex = ref(0)
 
 const images = [
   // Showcase photos - only for 'all' category
-  { src: getImagePath('/images/hero/hero-1.jpg'), alt: 'Premium Car', category: 'all' },
   { src: getImagePath('/images/hero/hero-2.jpg'), alt: 'Luxury Vehicle', category: 'all' },
   { src: getImagePath('/images/hero/hero-3.jpg'), alt: 'Detailed Car', category: 'all' },
   { src: getImagePath('/images/hero/hero-4.jpg'), alt: 'Perfect Finish', category: 'all' },
@@ -100,23 +99,29 @@ const images = [
 
   // Ceramic
   { src: getImagePath('/images/gallery/ceramic/ceramic-1.jpg'), alt: 'Premium Ceramic Coating', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-2.jpg'), alt: 'Ceramic Protection', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-3.jpg'), alt: 'Ceramic Finish', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-4.jpg'), alt: 'Ceramic Coating Result', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-5.jpg'), alt: 'Ceramic Coating Process', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-6.jpg'), alt: 'Ceramic Gloss Effect', category: 'ceramic' },
+  { src: getImagePath('/images/gallery/ceramic/ceramic-7.jpg'), alt: 'Ceramic Protection Layer', category: 'ceramic' },
 
   // Polishing
   { src: getImagePath('/images/gallery/polishing/polishing-1.jpg'), alt: 'Professional Polishing', category: 'polishing' },
   { src: getImagePath('/images/gallery/polishing/polishing-2.jpg'), alt: 'High Gloss Polishing', category: 'polishing' },
   { src: getImagePath('/images/gallery/polishing/polishing-3.jpg'), alt: 'Paint Correction', category: 'polishing' },
-  { src: getImagePath('/images/gallery/polishing/polishing-4.jpg'), alt: 'Polishing Result', category: 'polishing' },
-  { src: getImagePath('/images/gallery/polishing/polishing-5.jpg'), alt: 'Mirror Finish', category: 'polishing' },
 
   // Washing
   { src: getImagePath('/images/gallery/washing/washing-1.jpg'), alt: 'Complete Wash', category: 'washing' },
   { src: getImagePath('/images/gallery/washing/washing-2.jpg'), alt: 'Complex Wash', category: 'washing' },
   { src: getImagePath('/images/gallery/washing/washing-3.jpg'), alt: 'Washing Process', category: 'washing' },
   { src: getImagePath('/images/gallery/washing/washing-4.jpg'), alt: 'Car Washing', category: 'washing' },
+  { src: getImagePath('/images/gallery/washing/washing-5.jpg'), alt: 'Premium Wash Service', category: 'washing' },
 
   // Interior
   { src: getImagePath('/images/gallery/interior/interior-1.jpg'), alt: 'Interior Cleaning', category: 'interior' },
-  { src: getImagePath('/images/gallery/interior/interior-2.jpg'), alt: 'Interior Detailing', category: 'interior' }
+  { src: getImagePath('/images/gallery/interior/interior-2.jpg'), alt: 'Interior Detailing', category: 'interior' },
+  { src: getImagePath('/images/gallery/interior/interior-3.jpg'), alt: 'Interior Deep Clean', category: 'interior' }
 ]
 
 const filteredImages = computed(() => {
