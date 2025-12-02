@@ -69,8 +69,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useImagePath } from '@/composables/useImagePath'
+import { useScrollToSection } from '@/composables/useScrollToSection'
 
 const { getImagePath } = useImagePath()
+const { scrollToSection } = useScrollToSection()
 
 const images = [
   getImagePath('/images/hero/hero-1.jpg'),
@@ -85,18 +87,12 @@ let imageInterval = null
 
 const scrollToContact = (e) => {
   e.preventDefault()
-  const element = document.getElementById('contact')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  scrollToSection('contact')
 }
 
 const scrollToPrices = (e) => {
   e.preventDefault()
-  const element = document.getElementById('prices')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  scrollToSection('services')
 }
 
 const changeImage = () => {

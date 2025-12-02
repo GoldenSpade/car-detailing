@@ -19,6 +19,9 @@ import ServicesSection from '@/components/ServicesSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import Footer from '@/components/Footer.vue'
+import { useScrollToSection } from '@/composables/useScrollToSection'
+
+const { scrollToSection } = useScrollToSection()
 
 // Обработка хеша при загрузке страницы
 onMounted(() => {
@@ -26,15 +29,7 @@ onMounted(() => {
   if (hash) {
     const sectionId = hash.substring(1)
     setTimeout(() => {
-      const element = document.getElementById(sectionId)
-      if (element) {
-        const offset = 80
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-        window.scrollTo({
-          top: elementPosition - offset,
-          behavior: 'smooth'
-        })
-      }
+      scrollToSection(sectionId)
     }, 100)
   }
 })

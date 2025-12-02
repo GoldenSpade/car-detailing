@@ -110,6 +110,7 @@ const aboutFeatures = computed(() => [
   background: #0a0a0a;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 80px;
 }
 
 .about-section::before {

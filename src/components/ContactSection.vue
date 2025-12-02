@@ -223,6 +223,7 @@ const handleSubmit = async () => {
   padding: 100px 0 80px;
   background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
   position: relative;
+  scroll-margin-top: 80px;
 }
 
 .contact-section::before {

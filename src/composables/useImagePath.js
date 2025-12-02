@@ -1,13 +1,13 @@
 /**
- * Composable for working with image paths
- * Takes into account the BASE_URL from the Vite configuration
+ * Composable для работы с путями к изображениям
+ * Учитывает BASE_URL из конфигурации Vite
  */
 export function useImagePath() {
   /**
-   * Converts a relative image path to an absolute one
-   * taking into account the BASE_URL of the project
-   * @param {string} path - Relative path to the image
-   * @returns {string} - Absolute path with BASE_URL
+   * Преобразует относительный путь к изображению в абсолютный
+   * с учетом BASE_URL проекта
+   * @param {string} path - Относительный путь к изображению
+   * @returns {string} - Абсолютный путь с BASE_URL
    */
   const getImagePath = (path) => {
     return import.meta.env.BASE_URL + path.replace(/^\//, '')

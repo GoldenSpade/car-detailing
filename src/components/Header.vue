@@ -97,8 +97,10 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useScrollToSection } from '@/composables/useScrollToSection'
 
 const { locale } = useI18n()
+const { scrollToSectionWithRouter: scrollWithRouter } = useScrollToSection()
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
@@ -132,24 +134,7 @@ const toggleMenu = () => {
 }
 
 const scrollToSection = (sectionId) => {
-  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
-  const currentPath = window.location.pathname.replace(/\/$/, '')
-
-  // Если мы не на главной странице, переходим на главную с хешем
-  if (currentPath !== basePath) {
-    window.location.href = `${basePath}/#${sectionId}`
-    return
-  }
-
-  const element = document.getElementById(sectionId)
-  if (element) {
-    const offset = 80
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-    window.scrollTo({
-      top: elementPosition - offset,
-      behavior: 'smooth'
-    })
-  }
+  scrollWithRouter(sectionId)
   isMenuOpen.value = false
 }
 

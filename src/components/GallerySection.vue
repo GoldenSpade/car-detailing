@@ -155,6 +155,7 @@ const previousImage = () => {
   padding: 100px 0 80px;
   background: #0a0a0a;
   position: relative;
+  scroll-margin-top: 80px;
 }
 
 /* Section Header */
