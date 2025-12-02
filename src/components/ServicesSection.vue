@@ -10,7 +10,7 @@
       <!-- Services Grid -->
       <div class="row g-4">
         <!-- Ceramic Coating -->
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
           <div class="service-card" :class="{ popular: services.ceramic.popular }">
             <div class="service-badge" v-if="services.ceramic.popular">
               <i class="bi bi-star-fill"></i> Premium
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Complex Wash -->
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
           <div class="service-card">
             <div class="service-image">
               <img :src="services.complex.image" :alt="services.complex.title" />
@@ -75,7 +75,7 @@
         </div>
 
         <!-- Polishing -->
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
           <div class="service-card">
             <div class="service-image">
               <img :src="services.polishing.image" :alt="services.polishing.title" />
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Interior Cleaning -->
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
           <div class="service-card">
             <div class="service-image">
               <img :src="services.cleaning.image" :alt="services.cleaning.title" />
