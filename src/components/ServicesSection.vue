@@ -33,7 +33,6 @@
                 </li>
               </ul>
               <div class="service-footer">
-                <div class="service-price">{{ services.ceramic.price }}</div>
                 <a href="#contact" class="btn btn-service">
                   {{ $t('services.bookService') }}
                   <i class="bi bi-arrow-right ms-2"></i>
@@ -64,7 +63,6 @@
                 </li>
               </ul>
               <div class="service-footer">
-                <div class="service-price">{{ services.complex.price }}</div>
                 <a href="#contact" class="btn btn-service">
                   {{ $t('services.bookService') }}
                   <i class="bi bi-arrow-right ms-2"></i>
@@ -95,7 +93,6 @@
                 </li>
               </ul>
               <div class="service-footer">
-                <div class="service-price">{{ services.polishing.price }}</div>
                 <a href="#contact" class="btn btn-service">
                   {{ $t('services.bookService') }}
                   <i class="bi bi-arrow-right ms-2"></i>
@@ -126,7 +123,6 @@
                 </li>
               </ul>
               <div class="service-footer">
-                <div class="service-price">{{ services.cleaning.price }}</div>
                 <a href="#contact" class="btn btn-service">
                   {{ $t('services.bookService') }}
                   <i class="bi bi-arrow-right ms-2"></i>
@@ -397,17 +393,11 @@ const services = computed(() => ({
 /* Service Footer */
 .service-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: auto;
-}
-
-.service-price {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #ffd700;
 }
 
 .btn-service {
@@ -466,19 +456,9 @@ const services = computed(() => ({
     margin-bottom: 1rem;
   }
 
-  .service-footer {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
-  }
-
   .btn-service {
     width: 100%;
     justify-content: center;
-  }
-
-  .service-price {
-    text-align: center;
   }
 }
 
