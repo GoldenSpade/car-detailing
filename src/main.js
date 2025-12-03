@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import 'lenis/dist/lenis.css'
+import './assets/styles/global.css'
 
 import App from './App.vue'
 import router from './router'

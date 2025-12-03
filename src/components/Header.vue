@@ -6,10 +6,10 @@
         <div class="d-flex justify-content-between align-items-center py-2">
           <div class="contact-info d-none d-md-flex gap-3">
             <a href="tel:+49123456789" class="text-decoration-none">
-              <i class="bi bi-telephone-fill me-2"></i>+49 123 456 789
+              <i class="bi bi-telephone-fill me-2 align-middle"></i>+49 179 5251871
             </a>
             <a href="mailto:info@detailing.de" class="text-decoration-none">
-              <i class="bi bi-envelope-fill me-2"></i>info@detailing.de
+              <i class="bi bi-envelope-fill me-2 align-middle"></i>info@d4-detailing.com
             </a>
           </div>
           <div class="language-switcher">
