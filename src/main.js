@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import AOS from 'aos'
@@ -14,8 +13,6 @@ import { initSmoothScroll } from './composables/useSmoothScroll'
 
 const app = createApp(App)
 
-const pinia = createPinia()
-app.use(pinia)
 app.use(router)
 app.use(i18n)
 
