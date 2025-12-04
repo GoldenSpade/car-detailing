@@ -36,33 +36,6 @@
 }
 
 /* Дополнительные глобальные стили */
-html,
 body {
   overflow-x: hidden;
-  max-width: 100%;
-  width: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Предотвращение горизонтального скролла */
-.container,
-.container-fluid {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* Предотвращение overflow для всех секций */
-section {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* Фикс для Bootstrap row */
-.row {
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 100%;
 }
