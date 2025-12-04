@@ -168,6 +168,8 @@ const scrollToSection = (sectionId) => {
   color: #fff;
   padding: 60px 0 0;
   position: relative;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .footer::before {
@@ -273,6 +275,8 @@ const scrollToSection = (sectionId) => {
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.7);
   align-items: flex-start;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .footer-contact i {
@@ -286,6 +290,9 @@ const scrollToSection = (sectionId) => {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .footer-contact a:hover {
