@@ -7,93 +7,97 @@
  * 2. Extensions > Apps Script
  * 3. Copy this code to the editor
  * 4. Save the project
- * 5. Deploy > New deployment > Web app
- * 6. Execute as: Me
- * 7. Who has access: Anyone
- * 8. Copy the web app URL to .env as VITE_GOOGLE_SCRIPT_URL
+ * 5. Go to Project Settings > Script Properties
+ * 6. Deploy > New deployment > Web app
+ * 7. Execute as: Me
+ * 8. Who has access: Anyone
+ * 9. Copy the web app URL to .env as VITE_GOOGLE_SCRIPT_URL
  */
+
+const SPREADSHEET_ID = '1-Xo-ONrbwbY96TUdCjMVI3hNWcfK6rxoFrSat3mpGL0'
 
 function doPost(e) {
   try {
-    // Get active spreadsheet
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    // Get spreadsheet by ID and first sheet
+    const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID)
+    const sheet = spreadsheet.getSheets()[0]
 
     // Parse data from request
-    let data;
+    let data
     try {
-      data = JSON.parse(e.postData.contents);
+      data = JSON.parse(e.postData.contents)
     } catch (parseError) {
-      Logger.log('JSON parse error: ' + parseError.toString());
+      Logger.log('JSON parse error: ' + parseError.toString())
       // If JSON parsing fails, try to get data from parameters
-      data = e.parameter;
+      data = e.parameter
     }
 
     // Log received data for debugging
-    Logger.log('Received data: ' + JSON.stringify(data));
+    Logger.log('Received data: ' + JSON.stringify(data))
 
     // Get column headers from first row
-    const lastColumn = sheet.getLastColumn();
-    const headers = lastColumn > 0
-      ? sheet.getRange(1, 1, 1, lastColumn).getValues()[0]
-      : ['Name', 'Phone', 'Service', 'Message', 'Date'];
+    const lastColumn = sheet.getLastColumn()
+    const headers =
+      lastColumn > 0
+        ? sheet.getRange(1, 1, 1, lastColumn).getValues()[0]
+        : ['Name', 'Phone', 'Service', 'Message', 'Date']
 
-    Logger.log('Headers: ' + JSON.stringify(headers));
+    Logger.log('Headers: ' + JSON.stringify(headers))
 
     // Create row data array
-    const rowData = [];
+    const rowData = []
 
     // Fill data according to headers
-    headers.forEach(header => {
-      const headerLower = String(header).toLowerCase().trim();
+    headers.forEach((header) => {
+      const headerLower = String(header).toLowerCase().trim()
 
-      switch(headerLower) {
+      switch (headerLower) {
         case 'name':
-          rowData.push(data.name || '');
-          break;
+          rowData.push(data.name || '')
+          break
         case 'phone':
-          rowData.push(data.phone || '');
-          break;
+          rowData.push(data.phone || '')
+          break
         case 'service':
-          rowData.push(data.service || '');
-          break;
+          rowData.push(data.service || '')
+          break
         case 'message':
-          rowData.push(data.message || '');
-          break;
+          rowData.push(data.message || '')
+          break
         case 'date':
-          rowData.push(new Date());
-          break;
+          rowData.push(new Date())
+          break
         default:
-          rowData.push('');
+          rowData.push('')
       }
-    });
+    })
 
-    Logger.log('Row data: ' + JSON.stringify(rowData));
+    Logger.log('Row data: ' + JSON.stringify(rowData))
 
     // Append new row with data
-    sheet.appendRow(rowData);
+    sheet.appendRow(rowData)
 
     // Return success response with CORS headers
-    return ContentService
-      .createTextOutput(JSON.stringify({
+    return ContentService.createTextOutput(
+      JSON.stringify({
         success: true,
         message: 'Data saved successfully',
-        data: data
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
-
+        data: data,
+      })
+    ).setMimeType(ContentService.MimeType.JSON)
   } catch (error) {
     // Log error for debugging
-    Logger.log('Error: ' + error.toString());
-    Logger.log('Stack: ' + error.stack);
+    Logger.log('Error: ' + error.toString())
+    Logger.log('Stack: ' + error.stack)
 
     // Return error response
-    return ContentService
-      .createTextOutput(JSON.stringify({
+    return ContentService.createTextOutput(
+      JSON.stringify({
         success: false,
         message: error.toString(),
-        stack: error.stack
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
+        stack: error.stack,
+      })
+    ).setMimeType(ContentService.MimeType.JSON)
   }
 }
 
@@ -101,143 +105,145 @@ function doPost(e) {
 function doGet(e) {
   try {
     // Get callback name from parameters (for JSONP)
-    const callback = e.parameter.callback;
+    const callback = e.parameter.callback
 
     // Check if this is a data submission request
     if (e.parameter.name && e.parameter.phone) {
-      // Get active spreadsheet
-      const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      // Get spreadsheet by ID and first sheet
+      const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID)
+      const sheet = spreadsheet.getSheets()[0]
 
       // Get data from URL parameters
       const data = {
         name: e.parameter.name || '',
         phone: e.parameter.phone ? "'" + e.parameter.phone : '',
         service: e.parameter.service || '',
-        message: e.parameter.message || ''
-      };
+        message: e.parameter.message || '',
+      }
 
       // Log received data for debugging
-      Logger.log('Received data via GET: ' + JSON.stringify(data));
+      Logger.log('Received data via GET: ' + JSON.stringify(data))
 
       // Validate required fields
       if (!data.name || !data.phone) {
         const errorResponse = {
           success: false,
-          message: 'Name and phone are required'
-        };
+          message: 'Name and phone are required',
+        }
 
         if (callback) {
-          return ContentService
-            .createTextOutput(callback + '(' + JSON.stringify(errorResponse) + ')')
-            .setMimeType(ContentService.MimeType.JAVASCRIPT);
+          return ContentService.createTextOutput(
+            callback + '(' + JSON.stringify(errorResponse) + ')'
+          ).setMimeType(ContentService.MimeType.JAVASCRIPT)
         }
-        return ContentService
-          .createTextOutput(JSON.stringify(errorResponse))
-          .setMimeType(ContentService.MimeType.JSON);
+        return ContentService.createTextOutput(JSON.stringify(errorResponse)).setMimeType(
+          ContentService.MimeType.JSON
+        )
       }
 
       // Get column headers from first row
-      const lastColumn = sheet.getLastColumn();
-      const headers = lastColumn > 0
-        ? sheet.getRange(1, 1, 1, lastColumn).getValues()[0]
-        : ['Name', 'Phone', 'Service', 'Message', 'Date'];
+      const lastColumn = sheet.getLastColumn()
+      const headers =
+        lastColumn > 0
+          ? sheet.getRange(1, 1, 1, lastColumn).getValues()[0]
+          : ['Name', 'Phone', 'Service', 'Message', 'Date']
 
-      Logger.log('Headers: ' + JSON.stringify(headers));
+      Logger.log('Headers: ' + JSON.stringify(headers))
 
       // Create row data array
-      const rowData = [];
+      const rowData = []
 
       // Fill data according to headers
-      headers.forEach(header => {
-        const headerLower = String(header).toLowerCase().trim();
+      headers.forEach((header) => {
+        const headerLower = String(header).toLowerCase().trim()
 
-        switch(headerLower) {
+        switch (headerLower) {
           case 'name':
-            rowData.push(data.name);
-            break;
+            rowData.push(data.name)
+            break
           case 'phone':
-            rowData.push(data.phone);
-            break;
+            rowData.push(data.phone)
+            break
           case 'service':
-            rowData.push(data.service);
-            break;
+            rowData.push(data.service)
+            break
           case 'message':
-            rowData.push(data.message);
-            break;
+            rowData.push(data.message)
+            break
           case 'date':
-            rowData.push(new Date());
-            break;
+            rowData.push(new Date())
+            break
           default:
-            rowData.push('');
+            rowData.push('')
         }
-      });
+      })
 
-      Logger.log('Row data: ' + JSON.stringify(rowData));
+      Logger.log('Row data: ' + JSON.stringify(rowData))
 
       // Append new row with data
-      sheet.appendRow(rowData);
+      sheet.appendRow(rowData)
 
       // Prepare success response
       const successResponse = {
         success: true,
         message: 'Data saved successfully',
-        data: data
-      };
+        data: data,
+      }
 
       // Return JSONP response if callback is provided
       if (callback) {
-        return ContentService
-          .createTextOutput(callback + '(' + JSON.stringify(successResponse) + ')')
-          .setMimeType(ContentService.MimeType.JAVASCRIPT);
+        return ContentService.createTextOutput(
+          callback + '(' + JSON.stringify(successResponse) + ')'
+        ).setMimeType(ContentService.MimeType.JAVASCRIPT)
       }
 
       // Return regular JSON response
-      return ContentService
-        .createTextOutput(JSON.stringify(successResponse))
-        .setMimeType(ContentService.MimeType.JSON);
+      return ContentService.createTextOutput(JSON.stringify(successResponse)).setMimeType(
+        ContentService.MimeType.JSON
+      )
     }
 
     // Test endpoint
     const testResponse = {
       success: true,
       message: 'Google Apps Script is working',
-      timestamp: new Date()
-    };
-
-    if (callback) {
-      return ContentService
-        .createTextOutput(callback + '(' + JSON.stringify(testResponse) + ')')
-        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+      timestamp: new Date(),
     }
 
-    return ContentService
-      .createTextOutput(JSON.stringify(testResponse))
-      .setMimeType(ContentService.MimeType.JSON);
+    if (callback) {
+      return ContentService.createTextOutput(
+        callback + '(' + JSON.stringify(testResponse) + ')'
+      ).setMimeType(ContentService.MimeType.JAVASCRIPT)
+    }
 
+    return ContentService.createTextOutput(JSON.stringify(testResponse)).setMimeType(
+      ContentService.MimeType.JSON
+    )
   } catch (error) {
     // Log error for debugging
-    Logger.log('GET Error: ' + error.toString());
-    Logger.log('Stack: ' + error.stack);
+    Logger.log('GET Error: ' + error.toString())
+    Logger.log('Stack: ' + error.stack)
 
     // Prepare error response
     const errorResponse = {
       success: false,
       message: error.toString(),
-      stack: error.stack
-    };
+      stack: error.stack,
+    }
 
     // Return JSONP error response if callback is provided
-    const callback = e.parameter.callback;
-    if (callback) {
-      return ContentService
-        .createTextOutput(callback + '(' + JSON.stringify(errorResponse) + ')')
-        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+    // callback is already declared at the beginning of doGet function
+    const callbackParam = e && e.parameter ? e.parameter.callback : null
+    if (callbackParam) {
+      return ContentService.createTextOutput(
+        callbackParam + '(' + JSON.stringify(errorResponse) + ')'
+      ).setMimeType(ContentService.MimeType.JAVASCRIPT)
     }
 
     // Return regular JSON error response
-    return ContentService
-      .createTextOutput(JSON.stringify(errorResponse))
-      .setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(JSON.stringify(errorResponse)).setMimeType(
+      ContentService.MimeType.JSON
+    )
   }
 }
 
@@ -249,11 +255,12 @@ function testDoPost() {
         name: 'Test User',
         phone: '+49 179 5251871',
         service: 'ceramic',
-        message: 'Test message'
-      })
-    }
-  };
+        message: 'Test message',
+      }),
+    },
+  }
 
-  const result = doPost(testData);
-  Logger.log(result.getContent());
+  const result = doPost(testData)
+  Logger.log(result.getContent())
 }
+

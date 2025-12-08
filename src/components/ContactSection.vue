@@ -163,6 +163,55 @@ const isSubmitting = ref(false)
 const submitMessage = ref('')
 const submitSuccess = ref(false)
 
+// Send notification to Telegram
+const sendToTelegram = async (data) => {
+  try {
+    const token = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
+    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID
+
+    if (!token || !chatId) {
+      console.warn('Telegram credentials not configured')
+      return false
+    }
+
+    const message = `🚗 <b>Новая заявка с сайта D4 Detailing!</b>
+
+👤 <b>Имя:</b> ${data.name}
+📞 <b>Телефон:</b> ${data.phone}
+🔧 <b>Услуга:</b> ${data.service}
+💬 <b>Сообщение:</b> ${data.message}
+
+📅 <b>Дата:</b> ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Berlin' })}`
+
+    const telegramUrl = `https://api.telegram.org/bot${token}/sendMessage`
+
+    const response = await fetch(telegramUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML',
+      }),
+    })
+
+    const result = await response.json()
+
+    if (result.ok) {
+      console.log('Telegram notification sent successfully')
+      return true
+    } else {
+      console.error('Telegram API error:', result)
+      return false
+    }
+  } catch (error) {
+    console.error('Error sending Telegram notification:', error)
+    return false
+  }
+}
+
 const handleSubmit = async () => {
   isSubmitting.value = true
   submitMessage.value = ''
@@ -195,6 +244,11 @@ const handleSubmit = async () => {
         if (data.success) {
           submitSuccess.value = true
           submitMessage.value = t('contact.form.successMessage')
+
+          // Send Telegram notification (non-blocking)
+          sendToTelegram(formData.value).catch(err => {
+            console.warn('Failed to send Telegram notification:', err)
+          })
 
           // Clear form
           formData.value = {
