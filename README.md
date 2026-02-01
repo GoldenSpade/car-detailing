@@ -1,166 +1,166 @@
 # Car Detailing - Landing Page
 
-Современный одностраничный сайт (SPA) для услуг автодетейлинга с поддержкой многоязычности, плавной анимацией и адаптивным дизайном.
+Modern single-page application (SPA) for car detailing services with multi-language support, smooth animations, and responsive design.
 
-## Описание проекта
+## Project Description
 
-Лендинг-пейдж для автодетейлинг студии с профессиональным дизайном и современными веб-технологиями. Сайт включает разделы: главный экран, о компании, услуги, галерея работ, контакты и футер.
+Landing page for a car detailing studio with professional design and modern web technologies. The website includes sections: hero screen, about company, services, work gallery, contacts, and footer.
 
-## Основные возможности
+## Key Features
 
-- **Многоязычность** - поддержка 4 языков (EN, RU, UK, DE)
-- **Плавные анимации** - использование AOS (Animate On Scroll) для анимации элементов при прокрутке
-- **Smooth Scroll** - плавная прокрутка страницы с помощью Lenis
-- **Адаптивный дизайн** - корректное отображение на всех устройствах (Bootstrap 5)
-- **SPA-навигация** - одностраничное приложение с Vue Router
-- **Telegram уведомления** - автоматическая отправка заявок в Telegram бот при заполнении формы обратной связи
-- **Оптимизация** - автоматическое удаление console.log в production сборке
+- **Multi-language** - support for 4 languages (EN, RU, UK, DE)
+- **Smooth animations** - using AOS (Animate On Scroll) for element animations on scroll
+- **Smooth Scroll** - smooth page scrolling with Lenis
+- **Responsive design** - correct display on all devices (Bootstrap 5)
+- **SPA navigation** - single-page application with Vue Router
+- **Telegram notifications** - automatic sending of requests to Telegram bot when filling out the contact form
+- **Optimization** - automatic removal of console.log in production build
 
-## Технологический стек
+## Technology Stack
 
 ### Frontend Framework
-- **Vue 3** (^3.5.17) - прогрессивный JavaScript фреймворк
-- **Vue Router** (^4.5.1) - официальный роутер для Vue.js
-- **Vue I18n** (^9.9.0) - интернационализация и локализация
+- **Vue 3** (^3.5.17) - progressive JavaScript framework
+- **Vue Router** (^4.5.1) - official router for Vue.js
+- **Vue I18n** (^9.9.0) - internationalization and localization
 
 ### UI Framework & Styling
-- **Bootstrap 5** (^5.3.7) - CSS фреймворк для адаптивного дизайна
-- **Bootstrap Icons** (^1.13.1) - иконочный шрифт
+- **Bootstrap 5** (^5.3.7) - CSS framework for responsive design
+- **Bootstrap Icons** (^1.13.1) - icon font
 
 ### Animation & UX
-- **AOS** (^2.3.4) - Animate On Scroll library для анимации элементов
-- **Lenis** (^1.3.15) - библиотека для плавной прокрутки
+- **AOS** (^2.3.4) - Animate On Scroll library for element animations
+- **Lenis** (^1.3.15) - library for smooth scrolling
 
 ### Build Tools & Development
-- **Vite** (^7.0.0) - быстрый сборщик и dev-сервер нового поколения
-- **@vitejs/plugin-vue** (^6.0.0) - официальный плагин Vue для Vite
-- **vite-plugin-vue-devtools** (^7.7.7) - Vue DevTools интеграция
-- **vite-plugin-remove-console** (^2.2.0) - удаление console логов в продакшене
+- **Vite** (^7.0.0) - fast next-generation build tool and dev server
+- **@vitejs/plugin-vue** (^6.0.0) - official Vue plugin for Vite
+- **vite-plugin-vue-devtools** (^7.7.7) - Vue DevTools integration
+- **vite-plugin-remove-console** (^2.2.0) - remove console logs in production
 
 ### TypeScript Definitions
 - **@types/aos** (^3.0.7)
 - **@types/long** (^5.0.0)
 
-## Структура проекта
+## Project Structure
 
 ```
 car-detailing/
 ├── src/
 │   ├── assets/
 │   │   └── styles/
-│   │       └── global.css          # Глобальные стили
+│   │       └── global.css          # Global styles
 │   ├── components/
-│   │   ├── Header.vue              # Шапка сайта с навигацией
-│   │   ├── HeroSection.vue         # Главный экран
-│   │   ├── AboutSection.vue        # Раздел "О нас"
-│   │   ├── ServicesSection.vue     # Раздел с услугами
-│   │   ├── GallerySection.vue      # Галерея работ
-│   │   ├── ContactSection.vue      # Контактная информация
-│   │   └── Footer.vue              # Подвал сайта
+│   │   ├── Header.vue              # Site header with navigation
+│   │   ├── HeroSection.vue         # Hero section
+│   │   ├── AboutSection.vue        # About us section
+│   │   ├── ServicesSection.vue     # Services section
+│   │   ├── GallerySection.vue      # Work gallery
+│   │   ├── ContactSection.vue      # Contact information
+│   │   └── Footer.vue              # Site footer
 │   ├── composables/
-│   │   ├── useImagePath.js         # Композабл для работы с путями изображений
-│   │   ├── useScrollToSection.js   # Композабл для прокрутки к секциям
-│   │   └── useSmoothScroll.js      # Композабл для плавной прокрутки
+│   │   ├── useImagePath.js         # Composable for working with image paths
+│   │   ├── useScrollToSection.js   # Composable for scrolling to sections
+│   │   └── useSmoothScroll.js      # Composable for smooth scrolling
 │   ├── i18n/
-│   │   ├── index.js                # Настройка i18n
+│   │   ├── index.js                # i18n configuration
 │   │   └── locales/
-│   │       ├── en.js               # Английский
-│   │       ├── ru.js               # Русский
-│   │       ├── uk.js               # Украинский
-│   │       └── de.js               # Немецкий
+│   │       ├── en.js               # English
+│   │       ├── ru.js               # Russian
+│   │       ├── uk.js               # Ukrainian
+│   │       └── de.js               # German
 │   ├── pages/
-│   │   ├── HomePage.vue            # Главная страница
-│   │   ├── PrivacyPage.vue         # Политика конфиденциальности
-│   │   └── TermsPage.vue           # Условия использования
+│   │   ├── HomePage.vue            # Home page
+│   │   ├── PrivacyPage.vue         # Privacy policy
+│   │   └── TermsPage.vue           # Terms of use
 │   ├── router/
-│   │   └── index.js                # Конфигурация роутера
-│   ├── App.vue                     # Корневой компонент
-│   └── main.js                     # Точка входа приложения
-├── index.html                      # HTML шаблон
-├── vite.config.js                  # Конфигурация Vite
-└── package.json                    # Зависимости проекта
+│   │   └── index.js                # Router configuration
+│   ├── App.vue                     # Root component
+│   └── main.js                     # Application entry point
+├── index.html                      # HTML template
+├── vite.config.js                  # Vite configuration
+└── package.json                    # Project dependencies
 ```
 
-## Системные требования
+## System Requirements
 
 - **Node.js**: 20.18.2
 - **npm**: 10.8.2
 
-## Установка и запуск
+## Installation and Launch
 
-### Установка зависимостей
+### Install dependencies
 ```bash
 npm install
 ```
 
-### Режим разработки
+### Development mode
 ```bash
 npm run dev
 ```
-Запускает dev-сервер на [http://localhost:5173](http://localhost:5173)
+Starts dev server at [http://localhost:5173](http://localhost:5173)
 
-### Сборка для продакшена
+### Production build
 ```bash
 npm run build
 ```
-Создает оптимизированную сборку в папке `dist/`
+Creates optimized build in `dist/` folder
 
-### Предпросмотр production сборки
+### Preview production build
 ```bash
 npm run preview
 ```
 
-## Конфигурация
+## Configuration
 
 ### Vite Config
-- Алиасы путей: `@` -> `./src`
-- Удаление console.log в production (кроме error и warn)
-- Vue DevTools интеграция в development режиме
+- Path aliases: `@` -> `./src`
+- Remove console.log in production (except error and warn)
+- Vue DevTools integration in development mode
 
-### AOS настройки
+### AOS settings
 ```javascript
 {
-  duration: 800,      // Длительность анимации
+  duration: 800,      // Animation duration
   easing: 'ease-in-out',
-  once: true,         // Анимация только один раз
-  offset: 100         // Отступ для активации
+  once: true,         // Animate only once
+  offset: 100         // Activation offset
 }
 ```
 
-### Lenis настройки
+### Lenis settings
 ```javascript
 {
-  duration: 1.7,      // Скорость прокрутки
-  wheelMultiplier: 1  // Чувствительность колесика мыши
+  duration: 1.7,      // Scroll speed
+  wheelMultiplier: 1  // Mouse wheel sensitivity
 }
 ```
 
-## Особенности реализации
+## Implementation Features
 
-1. **Композаблы (Composables)** - переиспользуемая логика вынесена в отдельные модули
-2. **Компонентная архитектура** - модульная структура для легкой поддержки
-3. **Многоязычность** - полная поддержка i18n с переключением языка
-4. **Оптимизация изображений** - динамическая загрузка через композаблы
-5. **SEO-friendly** - поддержка SPA роутинга с корректной обработкой URL
+1. **Composables** - reusable logic extracted into separate modules
+2. **Component architecture** - modular structure for easy maintenance
+3. **Multi-language** - full i18n support with language switching
+4. **Image optimization** - dynamic loading through composables
+5. **SEO-friendly** - SPA routing support with proper URL handling
 
-## Интеграция с Telegram Bot
+## Telegram Bot Integration
 
-Проект включает функционал автоматической отправки уведомлений в Telegram при заполнении формы обратной связи.
+The project includes functionality for automatically sending notifications to Telegram when the contact form is submitted.
 
-### Функция sendToTelegram
+### sendToTelegram Function
 
-Расположена в [src/components/ContactSection.vue:167](src/components/ContactSection.vue#L167)
+Located in [src/components/ContactSection.vue:167](src/components/ContactSection.vue#L167)
 
-Функция отправляет уведомления с информацией о заявке:
-- 👤 Имя клиента
-- 📞 Телефон
-- 🔧 Выбранная услуга
-- 💬 Сообщение
-- 📅 Дата и время (таймзона: Europe/Berlin)
+The function sends notifications with request information:
+- 👤 Client name
+- 📞 Phone
+- 🔧 Selected service
+- 💬 Message
+- 📅 Date and time (timezone: Europe/Berlin)
 
-### Настройка переменных окружения
+### Environment Variables Setup
 
-Для работы Telegram уведомлений необходимо создать файл `.env` в корне проекта:
+To enable Telegram notifications, create a `.env` file in the project root:
 
 ```env
 VITE_TELEGRAM_BOT_TOKEN=your_bot_token_here
@@ -168,38 +168,38 @@ VITE_TELEGRAM_CHAT_ID=your_chat_id_here
 VITE_GOOGLE_SCRIPT_URL=your_google_script_url_here
 ```
 
-**Получение токена бота:**
-1. Откройте [@BotFather](https://t.me/BotFather) в Telegram
-2. Создайте нового бота командой `/newbot`
-3. Скопируйте полученный токен в `VITE_TELEGRAM_BOT_TOKEN`
+**Getting bot token:**
+1. Open [@BotFather](https://t.me/BotFather) in Telegram
+2. Create a new bot with `/newbot` command
+3. Copy the received token to `VITE_TELEGRAM_BOT_TOKEN`
 
-**Получение Chat ID:**
-1. Добавьте бота в группу или начните с ним диалог
-2. Отправьте любое сообщение боту
-3. Перейдите на `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
-4. Найдите `chat.id` в ответе и скопируйте в `VITE_TELEGRAM_CHAT_ID`
+**Getting Chat ID:**
+1. Add the bot to a group or start a dialog with it
+2. Send any message to the bot
+3. Go to `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
+4. Find `chat.id` in the response and copy to `VITE_TELEGRAM_CHAT_ID`
 
-### Формат уведомления
+### Notification Format
 
-Сообщения отправляются в формате HTML с эмодзи для лучшей читаемости:
+Messages are sent in HTML format with emojis for better readability:
 
 ```
-🚗 Новая заявка с сайта D4 Detailing!
+🚗 New request from D4 Detailing website!
 
-👤 Имя: Иван Иванов
-📞 Телефон: +49 179 5251871
-🔧 Услуга: Керамическое покрытие
-💬 Сообщение: Интересует защита кузова
+👤 Name: John Doe
+📞 Phone: +49 179 5251871
+🔧 Service: Ceramic coating
+💬 Message: Interested in body protection
 
-📅 Дата: 19.12.2025, 15:30:45
+📅 Date: 19.12.2025, 15:30:45
 ```
 
-### Обработка ошибок
+### Error Handling
 
-- Функция не блокирует отправку формы при ошибках Telegram API
-- Ошибки логируются в консоль, но не показываются пользователю
-- Если credentials не настроены, уведомление просто пропускается
+- Function doesn't block form submission on Telegram API errors
+- Errors are logged to console but not shown to user
+- If credentials are not configured, notification is simply skipped
 
-## Лицензия
+## License
 
 Private project
