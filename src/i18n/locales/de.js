@@ -167,7 +167,88 @@ export default {
     contactUs: 'Kontaktieren Sie uns',
     copyright: 'Premium Detailing. Alle Rechte vorbehalten.',
     privacy: 'Datenschutz',
-    terms: 'AGB'
+    terms: 'AGB',
+    impressum: 'Impressum',
+    datenschutz: 'Datenschutz'
+  },
+  impressum: {
+    title: 'Impressum',
+    section1: {
+      title: 'Angaben gemäß § 5 TMG'
+    },
+    section2: {
+      title: 'Kontakt'
+    },
+    section3: {
+      title: 'Haftung für Inhalte',
+      p1: 'Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.',
+      p2: 'Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.'
+    },
+    section4: {
+      title: 'Haftung für Links',
+      p1: 'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.',
+      p2: 'Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.'
+    },
+    section5: {
+      title: 'Urheberrecht',
+      text: 'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.'
+    }
+  },
+  datenschutz: {
+    title: 'Datenschutzerklärung',
+    s1: {
+      title: '1. Verantwortlicher',
+      text: 'Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:'
+    },
+    s2: {
+      title: '2. Erhebung und Verarbeitung personenbezogener Daten',
+      intro: 'Wir erheben personenbezogene Daten nur, wenn Sie uns diese im Rahmen Ihrer Anfrage über das Kontaktformular mitteilen. Dies umfasst:',
+      items: ['Name', 'Telefonnummer', 'E-Mail-Adresse (optional)', 'Nachricht bzw. gewünschte Dienstleistung'],
+      legal: 'Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO zur Durchführung vorvertraglicher Maßnahmen sowie zur Bearbeitung Ihrer Anfrage.'
+    },
+    s3: {
+      title: '3. Kontaktformular',
+      p1: 'Wenn Sie uns über das Kontaktformular eine Anfrage zukommen lassen, werden Ihre Angaben aus dem Formular zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.',
+      p2: 'Ihre Daten werden über Google Workspace (Google Apps Script) verarbeitet und gespeichert. Weitere Informationen finden Sie in den Datenschutzbestimmungen von Google:'
+    },
+    s4: {
+      title: '4. Weitergabe von Daten',
+      intro: 'Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den im Folgenden aufgeführten Zwecken findet nicht statt. Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn:',
+      items: [
+        'Sie Ihre ausdrückliche Einwilligung dazu erteilt haben (Art. 6 Abs. 1 lit. a DSGVO)',
+        'die Weitergabe zur Erfüllung eines Vertrages mit Ihnen erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO)',
+        'eine gesetzliche Verpflichtung zur Weitergabe besteht (Art. 6 Abs. 1 lit. c DSGVO)'
+      ]
+    },
+    s5: {
+      title: '5. Cookies',
+      text: 'Unsere Website verwendet keine Tracking-Cookies. Es werden lediglich technisch notwendige Daten (z. B. Spracheinstellung) im lokalen Speicher Ihres Browsers gespeichert, die keiner Übertragung an externe Server bedürfen.'
+    },
+    s6: {
+      title: '6. Ihre Rechte',
+      intro: 'Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:',
+      items: [
+        'Recht auf Auskunft (Art. 15 DSGVO)',
+        'Recht auf Berichtigung (Art. 16 DSGVO)',
+        'Recht auf Löschung (Art. 17 DSGVO)',
+        'Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)',
+        'Recht auf Datenübertragbarkeit (Art. 20 DSGVO)',
+        'Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)'
+      ],
+      note: 'Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren. Zuständige Aufsichtsbehörde in Baden-Württemberg ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg.'
+    },
+    s7: {
+      title: '7. Datensicherheit',
+      text: 'Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt wird.'
+    },
+    s8: {
+      title: '8. Aktualität und Änderung dieser Datenschutzerklärung',
+      text: 'Diese Datenschutzerklärung ist aktuell gültig und hat den Stand {date}. Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.'
+    },
+    s9: {
+      title: '9. Kontakt bei Datenschutzfragen',
+      text: 'Bei Fragen zum Datenschutz wenden Sie sich bitte direkt an uns:'
+    }
   },
   privacy: {
     title: 'Datenschutzerklärung',

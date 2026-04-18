@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
-import PrivacyPage from '@/pages/PrivacyPage.vue'
-import TermsPage from '@/pages/TermsPage.vue'
+import ImpressumPage from '@/pages/ImpressumPage.vue'
+import DatenschutzPage from '@/pages/DatenschutzPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,19 +15,19 @@ const router = createRouter({
       },
     },
     {
-      path: '/privacy',
-      name: 'privacy',
-      component: PrivacyPage,
+      path: '/impressum',
+      name: 'impressum',
+      component: ImpressumPage,
       meta: {
-        title: 'Privacy Policy - Premium Detailing',
+        title: 'Impressum - D4 Detailing',
       },
     },
     {
-      path: '/terms',
-      name: 'terms',
-      component: TermsPage,
+      path: '/datenschutz',
+      name: 'datenschutz',
+      component: DatenschutzPage,
       meta: {
-        title: 'Terms & Conditions - Premium Detailing',
+        title: 'Datenschutz - D4 Detailing',
       },
     },
   ],
@@ -41,7 +41,7 @@ const router = createRouter({
 })
 
 // Navigation guard to update document title and check authentication
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   // Update document title based on route meta
   if (to.meta?.title) {
     document.title = to.meta.title

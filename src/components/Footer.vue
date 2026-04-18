@@ -113,19 +113,19 @@
           <div class="col-md-6 text-center text-md-end">
             <div class="footer-bottom-links">
               <router-link
-                to="/privacy"
+                to="/impressum"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer-bottom-link"
-                >{{ $t('footer.privacy') }}</router-link
+                >{{ $t('footer.impressum') }}</router-link
               >
               <span class="separator">|</span>
               <router-link
-                to="/terms"
+                to="/datenschutz"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer-bottom-link"
-                >{{ $t('footer.terms') }}</router-link
+                >{{ $t('footer.datenschutz') }}</router-link
               >
             </div>
           </div>

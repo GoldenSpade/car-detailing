@@ -167,7 +167,88 @@ export default {
     contactUs: 'Contact Us',
     copyright: 'Premium Detailing. All rights reserved.',
     privacy: 'Privacy Policy',
-    terms: 'Terms & Conditions'
+    terms: 'Terms & Conditions',
+    impressum: 'Legal Notice',
+    datenschutz: 'Privacy Policy'
+  },
+  impressum: {
+    title: 'Legal Notice',
+    section1: {
+      title: 'Company Information (pursuant to § 5 TMG)'
+    },
+    section2: {
+      title: 'Contact'
+    },
+    section3: {
+      title: 'Liability for Content',
+      p1: 'As a service provider, we are responsible for our own content on these pages in accordance with general law. According to §§ 8 to 10 TMG, however, we as a service provider are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.',
+      p2: 'Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of any such violations, we will remove this content immediately.'
+    },
+    section4: {
+      title: 'Liability for Links',
+      p1: 'Our website contains links to external websites of third parties over whose content we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages.',
+      p2: 'The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, a permanent content control of the linked pages is not reasonable without concrete indications of a violation. Upon becoming aware of violations, we will remove such links immediately.'
+    },
+    section5: {
+      title: 'Copyright',
+      text: 'The content and works created by the site operators on these pages are subject to German copyright law. Reproduction, editing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.'
+    }
+  },
+  datenschutz: {
+    title: 'Privacy Policy',
+    s1: {
+      title: '1. Controller',
+      text: 'The controller within the meaning of the General Data Protection Regulation (GDPR) is:'
+    },
+    s2: {
+      title: '2. Collection and Processing of Personal Data',
+      intro: 'We only collect personal data when you provide it to us as part of your inquiry through the contact form. This includes:',
+      items: ['Name', 'Phone number', 'Email address (optional)', 'Message or requested service'],
+      legal: 'The processing of this data is based on Art. 6 para. 1 lit. b GDPR for the performance of pre-contractual measures and for processing your inquiry.'
+    },
+    s3: {
+      title: '3. Contact Form',
+      p1: 'When you send us an inquiry via the contact form, your details from the form will be stored with us for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent.',
+      p2: 'Your data is processed and stored via Google Workspace (Google Apps Script). For more information, please see Google\'s privacy policy:'
+    },
+    s4: {
+      title: '4. Data Sharing',
+      intro: 'Your personal data will not be transmitted to third parties for purposes other than those listed below. We only share your personal data with third parties if:',
+      items: [
+        'You have given your explicit consent (Art. 6 para. 1 lit. a GDPR)',
+        'Sharing is necessary to fulfill a contract with you (Art. 6 para. 1 lit. b GDPR)',
+        'There is a legal obligation to share the data (Art. 6 para. 1 lit. c GDPR)'
+      ]
+    },
+    s5: {
+      title: '5. Cookies',
+      text: 'Our website does not use tracking cookies. Only technically necessary data (e.g. language setting) is stored in your browser\'s local storage, which does not require transmission to external servers.'
+    },
+    s6: {
+      title: '6. Your Rights',
+      intro: 'You have the following rights regarding your personal data:',
+      items: [
+        'Right of access (Art. 15 GDPR)',
+        'Right to rectification (Art. 16 GDPR)',
+        'Right to erasure (Art. 17 GDPR)',
+        'Right to restriction of processing (Art. 18 GDPR)',
+        'Right to data portability (Art. 20 GDPR)',
+        'Right to object to processing (Art. 21 GDPR)'
+      ],
+      note: 'You also have the right to lodge a complaint with a data protection supervisory authority about the processing of your personal data by us.'
+    },
+    s7: {
+      title: '7. Data Security',
+      text: 'We use the widespread SSL procedure (Secure Socket Layer) in connection with the highest level of encryption supported by your browser during your website visit.'
+    },
+    s8: {
+      title: '8. Updates to this Privacy Policy',
+      text: 'This privacy policy is currently valid as of {date}. Due to the further development of our website and offers or due to changed legal or official requirements, it may be necessary to change this privacy policy.'
+    },
+    s9: {
+      title: '9. Contact for Privacy Questions',
+      text: 'If you have any questions about data protection, please contact us directly:'
+    }
   },
   privacy: {
     title: 'Privacy Policy',
