@@ -29,18 +29,6 @@
 
               <div class="contact-item">
                 <div class="contact-icon">
-                  <i class="bi bi-envelope-fill"></i>
-                </div>
-                <div class="contact-details">
-                  <h4>{{ $t('contact.email.title') }}</h4>
-                  <p>
-                    <a href="mailto:info@d4-detailing.com">info@d4-detailing.com</a>
-                  </p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
                   <i class="bi bi-whatsapp"></i>
                 </div>
                 <div class="contact-details">

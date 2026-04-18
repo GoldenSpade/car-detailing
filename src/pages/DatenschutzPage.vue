@@ -15,8 +15,7 @@
             68259 Mannheim<br />
             Deutschland<br /><br />
             <strong>Telefon:</strong> +49 179 5251871<br />
-            <strong>E-Mail:</strong>
-            <a href="mailto:alexandrdyachenko94@gmail.com">alexandrdyachenko94@gmail.com</a>
+            <strong>E-Mail:</strong> <a href="mailto:alexandrdyachenko94@gmail.com">alexandrdyachenko94@gmail.com</a>
           </p>
         </div>
 
@@ -76,8 +75,7 @@
           <h2>{{ $t('datenschutz.s9.title') }}</h2>
           <p>
             {{ $t('datenschutz.s9.text') }}<br /><br />
-            <strong>E-Mail:</strong>
-            <a href="mailto:alexandrdyachenko94@gmail.com">alexandrdyachenko94@gmail.com</a><br />
+            <strong>E-Mail:</strong> <a href="mailto:alexandrdyachenko94@gmail.com">alexandrdyachenko94@gmail.com</a><br />
             <strong>Telefon:</strong> +49 179 5251871
           </p>
         </div>

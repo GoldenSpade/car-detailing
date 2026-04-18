@@ -92,10 +92,6 @@
                 <a href="tel:+491795251871">+49 179 5251871</a>
               </li>
               <li>
-                <i class="bi bi-envelope-fill" style="margin-top: 0"></i>
-                <a href="mailto:info@d4-detailing.com">info@d4-detailing.com</a>
-              </li>
-              <li>
                 <i class="bi bi-whatsapp" style="margin-top: 0"></i>
                 <a href="https://wa.me/491795251871" target="_blank" rel="noopener noreferrer">WhatsApp (+49 179 5251871)</a>
               </li>

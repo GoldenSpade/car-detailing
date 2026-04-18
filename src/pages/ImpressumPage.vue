@@ -20,12 +20,8 @@
           <h2>{{ $t('impressum.section2.title') }}</h2>
           <p>
             <strong>Telefon:</strong> +49 179 5251871<br />
-            <strong>E-Mail:</strong>
-            <a href="mailto:alexandrdyachenko94@gmail.com">alexandrdyachenko94@gmail.com</a><br />
-            <strong>Website:</strong>
-            <a href="https://d4-detailing.com" target="_blank" rel="noopener noreferrer"
-              >https://d4-detailing.com</a
-            >
+            <strong>E-Mail:</strong> <a href="mailto:alexandrdyachenko94@gmail.com">alexandrdyachenko94@gmail.com</a><br />
+            <strong>Website:</strong> <a href="https://d4-detailing.com" target="_blank" rel="noopener noreferrer">https://d4-detailing.com</a>
           </p>
         </div>
 
