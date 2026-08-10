@@ -76,7 +76,13 @@ import { useImagePath } from '@/composables/useImagePath'
 
 const { getImagePath } = useImagePath()
 
-const categories = ['all', 'ceramic', 'polishing', 'washing', 'interior']
+const categories = [
+  'all',
+  'ceramic',
+  'polishing',
+  // 'washing',
+  'interior'
+]
 const activeCategory = ref('all')
 const lightboxOpen = ref(false)
 const currentImageIndex = ref(0)
@@ -85,13 +91,8 @@ const images = [
   // Showcase photos - only for 'all' category
   { src: getImagePath('/images/hero/hero-1.jpg'), alt: 'Top Quality', category: 'all' },
   { src: getImagePath('/images/hero/hero-2.jpg'), alt: 'Luxury Vehicle', category: 'all' },
-  { src: getImagePath('/images/hero/hero-3.jpg'), alt: 'Detailed Car', category: 'all' },
-  { src: getImagePath('/images/hero/hero-4.jpg'), alt: 'Perfect Finish', category: 'all' },
-  { src: getImagePath('/images/hero/hero-5.jpg'), alt: 'Premium Result', category: 'all' },
-  { src: getImagePath('/images/hero/hero-6.jpg'), alt: 'Luxury Detail', category: 'all' },
   { src: getImagePath('/images/hero/hero-7.jpg'), alt: 'Showcase Car', category: 'all' },
   { src: getImagePath('/images/hero/hero-8.jpg'), alt: 'Premium Work', category: 'all' },
-  { src: getImagePath('/images/hero/hero-9.jpg'), alt: 'Perfect Car', category: 'all' },
 
   // Ceramic
   {
@@ -104,31 +105,6 @@ const images = [
     alt: 'Ceramic Protection',
     category: 'ceramic',
   },
-  {
-    src: getImagePath('/images/gallery/ceramic/ceramic-3.jpg'),
-    alt: 'Ceramic Finish',
-    category: 'ceramic',
-  },
-  {
-    src: getImagePath('/images/gallery/ceramic/ceramic-4.jpg'),
-    alt: 'Ceramic Coating Result',
-    category: 'ceramic',
-  },
-  {
-    src: getImagePath('/images/gallery/ceramic/ceramic-5.jpg'),
-    alt: 'Ceramic Coating Process',
-    category: 'ceramic',
-  },
-  {
-    src: getImagePath('/images/gallery/ceramic/ceramic-6.jpg'),
-    alt: 'Ceramic Gloss Effect',
-    category: 'ceramic',
-  },
-  {
-    src: getImagePath('/images/gallery/ceramic/ceramic-7.jpg'),
-    alt: 'Ceramic Protection Layer',
-    category: 'ceramic',
-  },
 
   // Polishing
   {
@@ -138,12 +114,17 @@ const images = [
   },
   {
     src: getImagePath('/images/gallery/polishing/polishing-2.jpg'),
+    alt: 'Polishing Process',
+    category: 'polishing',
+  },
+  {
+    src: getImagePath('/images/gallery/polishing/polishing-3.jpg'),
     alt: 'Paint Correction',
     category: 'polishing',
   },
 
   // Washing
-  {
+  /* {
     src: getImagePath('/images/gallery/washing/washing-1.jpg'),
     alt: 'Complete Wash',
     category: 'washing',
@@ -162,10 +143,10 @@ const images = [
     src: getImagePath('/images/gallery/washing/washing-4.jpg'),
     alt: 'Car Washing',
     category: 'washing',
-  },
+  }, */
 
   // Interior
-  {
+    {
     src: getImagePath('/images/gallery/interior/interior-1.jpg'),
     alt: 'Interior Cleaning',
     category: 'interior',

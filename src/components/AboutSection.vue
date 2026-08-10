@@ -30,7 +30,7 @@
       <div class="row align-items-center mt-5">
         <div class="col-lg-6" data-aos="fade-right">
           <div class="about-image">
-            <img :src="getImagePath('/images/hero/hero-5.jpg')" alt="About Us" />
+            <img :src="getImagePath('/images/hero/hero-8.jpg')" alt="About Us" />
             <div class="experience-badge">
               <div class="badge-number">5+</div>
               <div class="badge-text">{{ $t('about.yearsExperience') }}</div>

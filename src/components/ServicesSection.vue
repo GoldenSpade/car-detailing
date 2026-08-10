@@ -187,7 +187,7 @@ const services = computed(() => ({
     ],
     price: t('services.polishing.price'),
     popular: false,
-    image: getImagePath('/images/gallery/polishing/polishing-1.jpg'),
+    image: getImagePath('/images/services/polishing.jpg'),
     icon: 'bi-stars'
   },
   cleaning: {
